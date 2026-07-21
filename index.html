@@ -600,11 +600,12 @@
           <h2>JAGM IT Company</h2>
           <p>
             Internal control plane for strategy, delivery, memory, and revenue execution.
-            This snapshot reflects the current company state: 122 AI roles, $0 revenue, and framework v1.5.
+            This snapshot reflects the current company state: 133 verified role files, 11 registered agents, 6 open issues, $0 revenue, and framework v1.5.
           </p>
           <div class="hero-meta">
-            <span class="chip"><strong>13</strong> live agents</span>
-            <span class="chip"><strong>122</strong> AI roles</span>
+            <span class="chip"><strong>11</strong> registered agents</span>
+            <span class="chip"><strong>133</strong> verified role files</span>
+            <span class="chip"><strong>6</strong> open issues</span>
             <span class="chip"><strong>$0</strong> revenue</span>
             <span class="chip"><strong>v1.5</strong> framework</span>
             <span class="chip"><strong>4</strong> memory layers</span>
@@ -615,13 +616,14 @@
             <a class="btn" href="#risks">Review risks</a>
           </div>
           <div class="copy-note" id="copyStatus" aria-live="polite"></div>
+          <p class="copy-note">Data is live as of 2026-07-21. Last updated: 2026-07-21 21:39 UTC.</p>
         </article>
 
         <aside class="panel hero-side" aria-label="Company snapshot statistics">
           <div class="stat-grid">
             <div class="stat">
               <label>Roles</label>
-              <div class="value" data-count="122">0</div>
+              <div class="value" data-count="133">0</div>
               <div class="sub">AI roles with memory contracts</div>
             </div>
             <div class="stat">
@@ -635,9 +637,9 @@
               <div class="sub">Stable baseline</div>
             </div>
             <div class="stat">
-              <label>Tests</label>
-              <div class="value" data-count="406">0</div>
-              <div class="sub">Collected test cases</div>
+              <label>Open issues</label>
+              <div class="value" data-count="6">0</div>
+              <div class="sub">Open GitHub issues across ai-sdlc and family-expenses</div>
             </div>
           </div>
           <div class="card" style="margin:0; background: rgba(255,255,255,0.03);">
@@ -762,9 +764,9 @@
       <div class="section-head">
         <div>
           <h3>Team</h3>
-          <p>Ten departments with role distribution that totals 122 AI roles.</p>
+          <p>Ten departments with 133 verified role files on disk. Legal audit found only two legal-related files, not 100 individual profiles.</p>
         </div>
-        <span class="badge neutral">122 total</span>
+        <span class="badge neutral">10 departments</span>
       </div>
       <div class="card">
         <div class="table-like" id="teamGrid"></div>
@@ -774,10 +776,10 @@
     <section class="section" id="twins">
       <div class="section-head">
         <div>
-          <h3>Digital Twins — Live Agents</h3>
-          <p>13 persistent agents running on Letta server. 10 on letta-free (cloud, 30K context), 3 on qwen2.5:3b (local). Message bus active with 15 inboxes.</p>
+          <h3>Digital Twins — Registered Agents</h3>
+          <p>11 persistent agent manifests on disk. The registry reflects actual files, not an assumed live total.</p>
         </div>
-        <span class="badge good">13 live</span>
+        <span class="badge good">11 registered</span>
       </div>
       <div class="grid-3" id="twinsGrid"></div>
     </section>
@@ -786,9 +788,9 @@
       <div class="section-head">
         <div>
           <h3>Memory Architecture</h3>
-          <p>Four-layer memory system with department coverage and a test foundation of 406 collected checks.</p>
+          <p>Four-layer memory system with department coverage.</p>
         </div>
-        <span class="badge neutral">4 layers · 10 departments · 406 tests</span>
+        <span class="badge neutral">4 layers · 10 departments</span>
       </div>
       <div class="grid-4" id="memoryGrid"></div>
     </section>
@@ -918,19 +920,17 @@
     ];
 
     const twins = [
-      { name: 'Clark (COO Twin)', model: 'Cloud LLM', role: 'Digital Twin / COO', status: 'good', detail: 'Primary partner agent. Letta Code Desktop. 140K context.' },
-      { name: 'CEO-JAGM', model: 'letta-free', role: 'Chief Executive Officer', status: 'good', detail: 'High-level triage and strategy. Created 2026-07-21.' },
-      { name: 'CTO-JAGM', model: 'qwen2.5:3b', role: 'Chief Technology Officer', status: 'warn', detail: 'SDLC enforcement. Needs upgrade to letta-free.' },
-      { name: 'CFO-JAGM', model: 'letta-free', role: 'Chief Financial Officer', status: 'good', detail: 'Budget and revenue tracking. Created 2026-07-21.' },
-      { name: 'CMO-JAGM', model: 'letta-free', role: 'Chief Marketing Officer', status: 'good', detail: 'Market positioning and outreach. Created 2026-07-21.' },
-      { name: 'CISO-JAGM', model: 'letta-free', role: 'Chief Information Security Officer', status: 'good', detail: 'Security and compliance. Created 2026-07-21.' },
-      { name: 'PMO-Lead', model: 'letta-free', role: 'Senior Technical PM', status: 'good', detail: 'Internal coordination and ticket flow. Created 2026-07-21.' },
-      { name: 'SEDO-Lead', model: 'letta-free', role: 'Senior Software Architect', status: 'good', detail: 'Development execution lead. Created 2026-07-21.' },
-      { name: 'QAO-Lead', model: 'letta-free', role: 'Senior QA Engineer', status: 'good', detail: 'Quality assurance lead. Created 2026-07-21.' },
-      { name: 'Memory-Warden', model: 'letta-free', role: 'Memory Manager', status: 'good', detail: 'Memory promotion, quarantine, and hygiene. Created 2026-07-21.' },
-      { name: 'Dashboard-Agent', model: 'letta-free', role: 'Dashboard Manager', status: 'good', detail: 'Live company status updates. Created 2026-07-21.' },
-      { name: 'Audit-Agent', model: 'letta-free', role: 'Senior QA Engineer', status: 'good', detail: 'Daily compliance and self-checks. Created 2026-07-21.' },
-      { name: 'Superman', model: 'qwen2.5:3b', role: 'Local backup agent', status: 'bad', detail: 'Legacy. Weak model, limited tools. Needs decommission.' }
+      { name: 'Roman Twin', model: 'active', role: 'Founder / Decision review', status: 'good', detail: 'Hold founder context, make final decisions, and send approved outreach personally. Source: roman.json' },
+      { name: 'CEO Twin', model: 'active', role: 'Chief Executive Officer', status: 'good', detail: 'Set company direction, revenue priorities, and capital allocation. Source: ceo.json' },
+      { name: 'COO Twin', model: 'active', role: 'Chief Operating Officer', status: 'good', detail: 'Run day-to-day operations, delivery flow, and coordination. Source: coo.json' },
+      { name: 'CFO Twin', model: 'active', role: 'Chief Financial Officer', status: 'good', detail: 'Track cash, budget, and revenue discipline. Source: cfo.json' },
+      { name: 'CTO Twin', model: 'active', role: 'Chief Technology Officer', status: 'good', detail: 'Set technical direction, architecture, and SDLC guardrails. Source: cto.json' },
+      { name: 'SalesO Twin', model: 'active', role: 'Sales Operations', status: 'good', detail: 'Manage outreach, pipeline, and commercial follow-up. Source: saleso.json' },
+      { name: 'LegalO Twin', model: 'active', role: 'Legal Operations', status: 'good', detail: 'Handle legal review, policy, and contract support. Source: legalo.json' },
+      { name: 'SEDO Twin', model: 'active', role: 'Software Engineering', status: 'good', detail: 'Drive engineering execution and code quality. Source: sedo.json' },
+      { name: 'PMO Twin', model: 'active', role: 'Project Management', status: 'good', detail: 'Coordinate delivery, owners, and deadlines. Source: pmo.json' },
+      { name: 'QAO Twin', model: 'active', role: 'Quality Assurance', status: 'good', detail: 'Keep the release bar honest and test coverage visible. Source: qao.json' },
+      { name: 'DevOps Twin', model: 'active', role: 'DevOps', status: 'good', detail: 'Support deployment, infrastructure, and environment hygiene. Source: devops.json' }
     ];
 
     const memoryLayers = [
@@ -1004,6 +1004,11 @@
         label: 'Memory taxonomy',
         severity: 'Medium',
         detail: 'Vocabulary drift between company and runtime layers still needs cleanup.'
+      },
+      {
+        label: 'Legal profiles',
+        severity: 'Medium',
+        detail: 'Only legal-counsel.md and legal-counsel-appendix.md were found; there is no 100-file legal library on disk.'
       }
     ];
 
@@ -1153,7 +1158,7 @@
       const btn = document.getElementById('copySummaryBtn');
       const status = document.getElementById('copyStatus');
       btn.addEventListener('click', async () => {
-        const summary = 'JAGM IT Company · 122 AI roles · $0 revenue · framework v1.5 · 4 memory layers · 10 departments.';
+        const summary = 'JAGM IT Company · 11 registered agents · 133 verified role files · 6 open issues · $0 revenue · framework v1.5 · 4 memory layers · 10 departments.';
         try {
           await navigator.clipboard.writeText(summary);
           status.textContent = 'Summary copied to clipboard.';
