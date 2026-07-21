@@ -1,0 +1,138 @@
+{
+  "generatedAt": "2026-07-21T23:10:11Z",
+  "revenue": 0,
+  "departmentCount": 10,
+  "memoryLayers": 4,
+  "roleProfilesCount": 133,
+  "agentsCount": 13,
+  "openIssuesCount": 30,
+  "repoCount": 18,
+  "repos": [
+    {
+      "name": "AdvancedDataGridView",
+      "fullName": "jagmstar/AdvancedDataGridView",
+      "url": "https://github.com/jagmstar/AdvancedDataGridView",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "ai-sdlc",
+      "fullName": "jagmstar/ai-sdlc",
+      "url": "https://github.com/jagmstar/ai-sdlc",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 26
+    },
+    {
+      "name": "CheckHelperAssembly",
+      "fullName": "jagmstar/CheckHelperAssembly",
+      "url": "https://github.com/jagmstar/CheckHelperAssembly",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "CommonUtilAssembly",
+      "fullName": "jagmstar/CommonUtilAssembly",
+      "url": "https://github.com/jagmstar/CommonUtilAssembly",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "drone-ibvs",
+      "fullName": "jagmstar/drone-ibvs",
+      "url": "https://github.com/jagmstar/drone-ibvs",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "dt-home-memory-backup-private",
+      "fullName": "jagmstar/dt-home-memory-backup-private",
+      "url": "https://github.com/jagmstar/dt-home-memory-backup-private",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "dt-home-personal",
+      "fullName": "jagmstar/dt-home-personal",
+      "url": "https://github.com/jagmstar/dt-home-personal",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "dt-home-wiki",
+      "fullName": "jagmstar/dt-home-wiki",
+      "url": "https://github.com/jagmstar/dt-home-wiki",
+      "visibility": "PUBLIC",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "family-expenses",
+      "fullName": "jagmstar/family-expenses",
+      "url": "https://github.com/jagmstar/family-expenses",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 2
+    },
+    {
+      "name": "Family-Spanding",
+      "fullName": "jagmstar/Family-Spanding",
+      "url": "https://github.com/jagmstar/Family-Spanding",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "FileSystemHelper",
+      "fullName": "jagmstar/FileSystemHelper",
+      "url": "https://github.com/jagmstar/FileSystemHelper",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "InteropWraper",
+      "fullName": "jagmstar/InteropWraper",
+      "url": "https://github.com/jagmstar/InteropWraper",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "JagmITCompany",
+      "fullName": "jagmstar/JagmITCompany",
+      "url": "https://github.com/jagmstar/JagmITCompany",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 2
+    },
+    {
+      "name": "JagmITCompany-dashboard",
+      "fullName": "jagmstar/JagmITCompany-dashboard",
+      "url": "https://github.com/jagmstar/JagmITCompany-dashboard",
+      "visibility": "PUBLIC",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "practic19",
+      "fullName": "jagmstar/practic19",
+      "url": "https://github.com/jagmstar/practic19",
+      "visibility": "PUBLIC",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "SkypeLibrary",
+      "fullName": "jagmstar/SkypeLibrary",
+      "url": "https://github.com/jagmstar/SkypeLibrary",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "SQLiteExt",
+      "fullName": "jagmstar/SQLiteExt",
+      "url": "https://github.com/jagmstar/SQLiteExt",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "WebScraperCore",
+      "fullName": "jagmstar/WebScraperCore",
+      "url": "https://github.com/jagmstar/WebScraperCore",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    }
+  ]
+}

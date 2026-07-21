@@ -598,48 +598,47 @@
         <article class="panel hero-main">
           <span class="eyebrow">Private company dashboard</span>
           <h2>JAGM IT Company</h2>
-          <p>
-            Internal control plane for strategy, delivery, memory, and revenue execution.
-            This snapshot reflects the current company state: 133 verified role files, 11 registered agents, 6 open issues, $0 revenue, and framework v1.5.
+          <p id="heroSummary">
+            Live snapshot loaded from GitHub, the local role directory, and the agent registry.
           </p>
           <div class="hero-meta">
-            <span class="chip"><strong>11</strong> registered agents</span>
-            <span class="chip"><strong>133</strong> verified role files</span>
-            <span class="chip"><strong>6</strong> open issues</span>
-            <span class="chip"><strong>$0</strong> revenue</span>
-            <span class="chip"><strong>v1.5</strong> framework</span>
-            <span class="chip"><strong>4</strong> memory layers</span>
-            <span class="chip"><strong>10</strong> departments</span>
+            <span class="chip"><strong id="heroAgentsValue" data-count="0">0</strong> registered agents</span>
+            <span class="chip"><strong id="heroRolesValue" data-count="0">0</strong> verified role files</span>
+            <span class="chip"><strong id="heroIssuesValue" data-count="0">0</strong> open issues</span>
+            <span class="chip"><strong id="heroRevenueValue" data-count="0">$0</strong> revenue</span>
+            <span class="chip"><strong id="heroFrameworkValue">v1.5</strong> framework</span>
+            <span class="chip"><strong id="heroLayersValue">4</strong> memory layers</span>
+            <span class="chip"><strong id="heroDepartmentsValue">10</strong> departments</span>
           </div>
           <div class="toolbar">
             <button class="btn" id="copySummaryBtn" type="button">Copy summary</button>
             <a class="btn" href="#risks">Review risks</a>
           </div>
           <div class="copy-note" id="copyStatus" aria-live="polite"></div>
-          <p class="copy-note">Data is live as of 2026-07-21. Last updated: 2026-07-21 21:39 UTC.</p>
+          <p class="copy-note" id="heroUpdated">Last refreshed moments ago.</p>
         </article>
 
         <aside class="panel hero-side" aria-label="Company snapshot statistics">
           <div class="stat-grid">
             <div class="stat">
               <label>Roles</label>
-              <div class="value" data-count="133">0</div>
+              <div class="value" id="rolesValue" data-count="0">0</div>
               <div class="sub">AI roles with memory contracts</div>
             </div>
             <div class="stat">
               <label>Revenue</label>
-              <div class="value" data-count="0">$0</div>
+              <div class="value" id="revenueValue" data-count="0">$0</div>
               <div class="sub">Pre-revenue stage</div>
             </div>
             <div class="stat">
               <label>Framework</label>
-              <div class="value">v1.5</div>
+              <div class="value" id="frameworkValue">v1.5</div>
               <div class="sub">Stable baseline</div>
             </div>
             <div class="stat">
               <label>Open issues</label>
-              <div class="value" data-count="6">0</div>
-              <div class="sub">Open GitHub issues across ai-sdlc and family-expenses</div>
+              <div class="value" id="openIssuesValue" data-count="0">0</div>
+              <div class="sub">Open GitHub issues across jagmstar repositories</div>
             </div>
           </div>
           <div class="card" style="margin:0; background: rgba(255,255,255,0.03);">
@@ -676,7 +675,7 @@
           <div class="stat-grid">
             <div class="stat">
               <label>Revenue</label>
-              <div class="value">$0</div>
+              <div class="value" id="cRevenueValue" data-count="0">$0</div>
               <div class="sub">Pre-revenue. First paid client remains the priority.</div>
             </div>
             <div class="stat">
@@ -764,9 +763,9 @@
       <div class="section-head">
         <div>
           <h3>Team</h3>
-          <p>Ten departments with 133 verified role files on disk. Legal audit found only two legal-related files, not 100 individual profiles.</p>
+          <p id="teamIntro">Live role-file totals are sourced from the local agents directory and reflected in the dashboard automatically.</p>
         </div>
-        <span class="badge neutral">10 departments</span>
+        <span class="badge neutral" id="teamBadge">10 departments</span>
       </div>
       <div class="card">
         <div class="table-like" id="teamGrid"></div>
@@ -777,9 +776,9 @@
       <div class="section-head">
         <div>
           <h3>Digital Twins — Registered Agents</h3>
-          <p>11 persistent agent manifests on disk. The registry reflects actual files, not an assumed live total.</p>
+          <p id="twinsIntro">The agent registry combines local manifests with the live API, so the twin view stays aligned with the current roster.</p>
         </div>
-        <span class="badge good">11 registered</span>
+        <span class="badge good" id="twinsBadge">11 registered</span>
       </div>
       <div class="grid-3" id="twinsGrid"></div>
     </section>
@@ -788,9 +787,9 @@
       <div class="section-head">
         <div>
           <h3>Memory Architecture</h3>
-          <p>Four-layer memory system with department coverage.</p>
+          <p id="memoryIntro">Four-layer memory system with department coverage.</p>
         </div>
-        <span class="badge neutral">4 layers · 10 departments</span>
+        <span class="badge neutral" id="memoryBadge">4 layers · 10 departments</span>
       </div>
       <div class="grid-4" id="memoryGrid"></div>
     </section>
@@ -799,9 +798,9 @@
       <div class="section-head">
         <div>
           <h3>Repos</h3>
-          <p>Direct links to the five core GitHub repositories referenced by the current company dashboard.</p>
+          <p id="reposIntro">Direct links to all GitHub repositories returned by the jagmstar org listing.</p>
         </div>
-        <span class="badge neutral">5 links</span>
+        <span class="badge neutral" id="reposBadge">0 repos</span>
       </div>
       <div class="repo-list" id="repoList"></div>
     </section>
@@ -810,7 +809,7 @@
       <div class="section-head">
         <div>
           <h3>Risks</h3>
-          <p>The current watchlist: revenue, product reliability, voice pipeline quality, and memory vocabulary consistency.</p>
+          <p id="risksIntro">The current watchlist: revenue, product reliability, voice pipeline quality, and memory vocabulary consistency.</p>
         </div>
         <span class="badge warn">Attention required</span>
       </div>
@@ -818,9 +817,150 @@
     </section>
 
     <div class="footer">
-      Confidential internal dashboard for JAGM IT Company · built as a single static HTML file with embedded CSS and JavaScript.
+      Confidential internal dashboard for JAGM IT Company · powered by live JSON data with an embedded fallback for static hosting.
     </div>
   </main>
+
+  <script id="dashboard-data" type="application/json">
+{
+  "generatedAt": "2026-07-21T23:10:11Z",
+  "revenue": 0,
+  "departmentCount": 10,
+  "memoryLayers": 4,
+  "roleProfilesCount": 133,
+  "agentsCount": 13,
+  "openIssuesCount": 30,
+  "repoCount": 18,
+  "repos": [
+    {
+      "name": "AdvancedDataGridView",
+      "fullName": "jagmstar/AdvancedDataGridView",
+      "url": "https://github.com/jagmstar/AdvancedDataGridView",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "ai-sdlc",
+      "fullName": "jagmstar/ai-sdlc",
+      "url": "https://github.com/jagmstar/ai-sdlc",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 26
+    },
+    {
+      "name": "CheckHelperAssembly",
+      "fullName": "jagmstar/CheckHelperAssembly",
+      "url": "https://github.com/jagmstar/CheckHelperAssembly",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "CommonUtilAssembly",
+      "fullName": "jagmstar/CommonUtilAssembly",
+      "url": "https://github.com/jagmstar/CommonUtilAssembly",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "drone-ibvs",
+      "fullName": "jagmstar/drone-ibvs",
+      "url": "https://github.com/jagmstar/drone-ibvs",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "dt-home-memory-backup-private",
+      "fullName": "jagmstar/dt-home-memory-backup-private",
+      "url": "https://github.com/jagmstar/dt-home-memory-backup-private",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "dt-home-personal",
+      "fullName": "jagmstar/dt-home-personal",
+      "url": "https://github.com/jagmstar/dt-home-personal",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "dt-home-wiki",
+      "fullName": "jagmstar/dt-home-wiki",
+      "url": "https://github.com/jagmstar/dt-home-wiki",
+      "visibility": "PUBLIC",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "family-expenses",
+      "fullName": "jagmstar/family-expenses",
+      "url": "https://github.com/jagmstar/family-expenses",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 2
+    },
+    {
+      "name": "Family-Spanding",
+      "fullName": "jagmstar/Family-Spanding",
+      "url": "https://github.com/jagmstar/Family-Spanding",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "FileSystemHelper",
+      "fullName": "jagmstar/FileSystemHelper",
+      "url": "https://github.com/jagmstar/FileSystemHelper",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "InteropWraper",
+      "fullName": "jagmstar/InteropWraper",
+      "url": "https://github.com/jagmstar/InteropWraper",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "JagmITCompany",
+      "fullName": "jagmstar/JagmITCompany",
+      "url": "https://github.com/jagmstar/JagmITCompany",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 2
+    },
+    {
+      "name": "JagmITCompany-dashboard",
+      "fullName": "jagmstar/JagmITCompany-dashboard",
+      "url": "https://github.com/jagmstar/JagmITCompany-dashboard",
+      "visibility": "PUBLIC",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "practic19",
+      "fullName": "jagmstar/practic19",
+      "url": "https://github.com/jagmstar/practic19",
+      "visibility": "PUBLIC",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "SkypeLibrary",
+      "fullName": "jagmstar/SkypeLibrary",
+      "url": "https://github.com/jagmstar/SkypeLibrary",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "SQLiteExt",
+      "fullName": "jagmstar/SQLiteExt",
+      "url": "https://github.com/jagmstar/SQLiteExt",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    },
+    {
+      "name": "WebScraperCore",
+      "fullName": "jagmstar/WebScraperCore",
+      "url": "https://github.com/jagmstar/WebScraperCore",
+      "visibility": "PRIVATE",
+      "openIssuesCount": 0
+    }
+  ]
+}
+  </script>
 
   <script>
     const initiatives = [
@@ -1182,5 +1322,131 @@
       animateBars();
     });
   </script>
+<script>
+  (async () => {
+    const embeddedEl = document.getElementById('dashboard-data');
+    let embeddedData = {};
+    try {
+      embeddedData = JSON.parse(embeddedEl?.textContent || '{}');
+    } catch {
+      embeddedData = {};
+    }
+
+    async function loadData() {
+      try {
+        const response = await fetch('data.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return { ...embeddedData, ...(await response.json()) };
+      } catch {
+        return embeddedData;
+      }
+    }
+
+    const data = await loadData();
+    const repoCount = Number(data.repoCount || (Array.isArray(data.repos) ? data.repos.length : 0));
+    const totalOpenIssues = Number(data.openIssuesCount || 0);
+    const roleProfilesCount = Number(data.roleProfilesCount || 0);
+    const agentsCount = Number(data.agentsCount || 0);
+    const departmentCount = Number(data.departmentCount || 0);
+    const memoryLayers = Number(data.memoryLayers || 0);
+    const revenue = Number(data.revenue || 0);
+
+    const setText = (id, value) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    };
+
+    const setCount = (id, value, money = false) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const target = Number(value || 0);
+      el.dataset.count = String(target);
+      el.textContent = money ? `$${target.toLocaleString()}` : target.toLocaleString();
+    };
+
+    const formatUtc = (value) => {
+      if (!value) return 'just now';
+      const date = new Date(value);
+      if (Number.isNaN(date.getTime())) return 'just now';
+      const pad = (num) => String(num).padStart(2, '0');
+      return `${date.getUTCFullYear()}-${pad(date.getUTCMonth() + 1)}-${pad(date.getUTCDate())} ${pad(date.getUTCHours())}:${pad(date.getUTCMinutes())} UTC`;
+    };
+
+    setText('heroSummary', `Live snapshot loaded from ${repoCount} GitHub repositories, ${roleProfilesCount.toLocaleString()} role profiles, ${agentsCount.toLocaleString()} registered agents, ${totalOpenIssues.toLocaleString()} open issues, and $${revenue.toLocaleString()} revenue.`);
+    setText('heroUpdated', `Last refreshed ${formatUtc(data.generatedAt)}.`);
+    setCount('heroAgentsValue', agentsCount);
+    setCount('heroRolesValue', roleProfilesCount);
+    setCount('heroIssuesValue', totalOpenIssues);
+    setCount('heroRevenueValue', revenue, true);
+    setText('heroFrameworkValue', data.frameworkVersion || 'v1.5');
+    setText('heroLayersValue', memoryLayers.toLocaleString());
+    setText('heroDepartmentsValue', departmentCount.toLocaleString());
+
+    setCount('rolesValue', roleProfilesCount);
+    setCount('revenueValue', revenue, true);
+    setText('frameworkValue', data.frameworkVersion || 'v1.5');
+    setCount('openIssuesValue', totalOpenIssues);
+    setCount('cRevenueValue', revenue, true);
+
+    setText('teamIntro', `Live role-file totals are sourced from the local agents directory (${roleProfilesCount.toLocaleString()} markdown files).`);
+    setText('teamBadge', `${departmentCount.toLocaleString()} departments`);
+    setText('twinsIntro', `The agent registry currently reports ${agentsCount.toLocaleString()} live agents.`);
+    setText('twinsBadge', `${agentsCount.toLocaleString()} registered`);
+    setText('memoryIntro', `Four-layer memory system with ${departmentCount.toLocaleString()} department coverage.`);
+    setText('memoryBadge', `${memoryLayers.toLocaleString()} layers · ${departmentCount.toLocaleString()} departments`);
+    setText('reposIntro', `Direct links to all ${repoCount.toLocaleString()} GitHub repositories returned by the jagmstar org listing.`);
+    setText('reposBadge', `${repoCount.toLocaleString()} repos`);
+
+    const repoList = document.getElementById('repoList');
+    if (repoList) {
+      const repos = Array.isArray(data.repos) ? data.repos : [];
+      repoList.innerHTML = repos.length
+        ? repos.map((repo) => {
+            const visibility = String(repo.visibility || 'UNKNOWN').toUpperCase();
+            const issues = Number(repo.openIssuesCount || 0);
+            const issueLabel = `${issues.toLocaleString()} open issue${issues === 1 ? '' : 's'}`;
+            const badgeClass = visibility === 'PRIVATE' ? 'warn' : visibility === 'PUBLIC' ? 'good' : 'neutral';
+            const title = repo.fullName || repo.name || 'Unnamed repository';
+            const href = repo.url || `https://github.com/${title}`;
+            return `
+              <a class="repo-link" href="${href}" target="_blank" rel="noreferrer noopener">
+                <div>
+                  <strong>${title}</strong>
+                  <small>${visibility} · ${issueLabel}</small>
+                </div>
+                <span class="badge ${badgeClass}">${visibility}</span>
+              </a>
+            `;
+          }).join('')
+        : '<div class="card"><p>No repositories returned by the org listing.</p></div>';
+    }
+
+    const btn = document.getElementById('copySummaryBtn');
+    if (btn) {
+      const freshBtn = btn.cloneNode(true);
+      btn.replaceWith(freshBtn);
+      freshBtn.addEventListener('click', async () => {
+        const summary = `JAGM IT Company · ${agentsCount.toLocaleString()} registered agents · ${roleProfilesCount.toLocaleString()} verified role files · ${totalOpenIssues.toLocaleString()} open issues · $${revenue.toLocaleString()} revenue · framework v1.5 · ${memoryLayers.toLocaleString()} memory layers · ${departmentCount.toLocaleString()} departments.`;
+        const status = document.getElementById('copyStatus');
+        try {
+          await navigator.clipboard.writeText(summary);
+          if (status) status.textContent = 'Summary copied to clipboard.';
+        } catch {
+          if (status) status.textContent = 'Clipboard unavailable in this context.';
+        }
+        window.setTimeout(() => {
+          if (status) status.textContent = '';
+        }, 2500);
+      });
+    }
+
+    if (typeof animateCounts === 'function') {
+      window.requestAnimationFrame(() => animateCounts());
+    }
+    if (typeof animateBars === 'function') {
+      window.requestAnimationFrame(() => animateBars());
+    }
+  })();
+</script>
 </body>
 </html>
