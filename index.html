@@ -584,6 +584,7 @@
         <a href="#initiatives">Initiatives</a>
         <a href="#projects">Projects</a>
         <a href="#team">Team</a>
+        <a href="#twins">Twins</a>
         <a href="#memory">Memory</a>
         <a href="#repos">Repos</a>
         <a href="#risks">Risks</a>
@@ -602,6 +603,7 @@
             This snapshot reflects the current company state: 122 AI roles, $0 revenue, and framework v1.5.
           </p>
           <div class="hero-meta">
+            <span class="chip"><strong>13</strong> live agents</span>
             <span class="chip"><strong>122</strong> AI roles</span>
             <span class="chip"><strong>$0</strong> revenue</span>
             <span class="chip"><strong>v1.5</strong> framework</span>
@@ -769,6 +771,17 @@
       </div>
     </section>
 
+    <section class="section" id="twins">
+      <div class="section-head">
+        <div>
+          <h3>Digital Twins — Live Agents</h3>
+          <p>13 persistent agents running on Letta server. 10 on letta-free (cloud, 30K context), 3 on qwen2.5:3b (local). Message bus active with 15 inboxes.</p>
+        </div>
+        <span class="badge good">13 live</span>
+      </div>
+      <div class="grid-3" id="twinsGrid"></div>
+    </section>
+
     <section class="section" id="memory">
       <div class="section-head">
         <div>
@@ -904,6 +917,22 @@
       { code: 'FinanceO', name: 'Finance', count: 8 }
     ];
 
+    const twins = [
+      { name: 'Clark (COO Twin)', model: 'Cloud LLM', role: 'Digital Twin / COO', status: 'good', detail: 'Primary partner agent. Letta Code Desktop. 140K context.' },
+      { name: 'CEO-JAGM', model: 'letta-free', role: 'Chief Executive Officer', status: 'good', detail: 'High-level triage and strategy. Created 2026-07-21.' },
+      { name: 'CTO-JAGM', model: 'qwen2.5:3b', role: 'Chief Technology Officer', status: 'warn', detail: 'SDLC enforcement. Needs upgrade to letta-free.' },
+      { name: 'CFO-JAGM', model: 'letta-free', role: 'Chief Financial Officer', status: 'good', detail: 'Budget and revenue tracking. Created 2026-07-21.' },
+      { name: 'CMO-JAGM', model: 'letta-free', role: 'Chief Marketing Officer', status: 'good', detail: 'Market positioning and outreach. Created 2026-07-21.' },
+      { name: 'CISO-JAGM', model: 'letta-free', role: 'Chief Information Security Officer', status: 'good', detail: 'Security and compliance. Created 2026-07-21.' },
+      { name: 'PMO-Lead', model: 'letta-free', role: 'Senior Technical PM', status: 'good', detail: 'Internal coordination and ticket flow. Created 2026-07-21.' },
+      { name: 'SEDO-Lead', model: 'letta-free', role: 'Senior Software Architect', status: 'good', detail: 'Development execution lead. Created 2026-07-21.' },
+      { name: 'QAO-Lead', model: 'letta-free', role: 'Senior QA Engineer', status: 'good', detail: 'Quality assurance lead. Created 2026-07-21.' },
+      { name: 'Memory-Warden', model: 'letta-free', role: 'Memory Manager', status: 'good', detail: 'Memory promotion, quarantine, and hygiene. Created 2026-07-21.' },
+      { name: 'Dashboard-Agent', model: 'letta-free', role: 'Dashboard Manager', status: 'good', detail: 'Live company status updates. Created 2026-07-21.' },
+      { name: 'Audit-Agent', model: 'letta-free', role: 'Senior QA Engineer', status: 'good', detail: 'Daily compliance and self-checks. Created 2026-07-21.' },
+      { name: 'Superman', model: 'qwen2.5:3b', role: 'Local backup agent', status: 'bad', detail: 'Legacy. Weak model, limited tools. Needs decommission.' }
+    ];
+
     const memoryLayers = [
       {
         title: 'Company',
@@ -1035,6 +1064,22 @@
       `).join('');
     }
 
+    function renderTwins() {
+      const grid = document.getElementById('twinsGrid');
+      grid.innerHTML = twins.map((twin) => `
+        <article class="card">
+          <header>
+            <div>
+              <h4>${twin.name}</h4>
+              <div class="meta">${twin.role}</div>
+            </div>
+            <span class="badge ${badgeClass(twin.status)}">${twin.model}</span>
+          </header>
+          <p>${twin.detail}</p>
+        </article>
+      `).join('');
+    }
+
     function renderMemory() {
       const grid = document.getElementById('memoryGrid');
       grid.innerHTML = memoryLayers.map((layer, index) => `
@@ -1122,6 +1167,7 @@
     renderInitiatives();
     renderProjects();
     renderTeam();
+    renderTwins();
     renderMemory();
     renderRepos();
     renderRisks();
