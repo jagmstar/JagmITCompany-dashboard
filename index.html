@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>JAGM IT Company — Private Dashboard</title>
+  <style>
+    :root {
+      --bg: #08111f;
+      --bg-2: #0d1728;
+      --panel: rgba(12, 20, 36, 0.82);
+      --panel-strong: rgba(17, 27, 46, 0.96);
+      --panel-border: rgba(148, 163, 184, 0.16);
+      --text: #e5eefb;
+      --muted: #92a4c1;
+      --muted-2: #7184a6;
+      --accent: #7cdbff;
+      --accent-2: #9b8cff;
+      --good: #4ade80;
+      --warn: #fbbf24;
+      --bad: #fb7185;
+      --shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+      --radius: 22px;
+      --radius-sm: 16px;
+      --max: 1280px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(124, 219, 255, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(155, 140, 255, 0.12), transparent 30%),
+        linear-gradient(180deg, #050b14 0%, var(--bg) 40%, #070d18 100%);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.6), transparent 90%);
+      opacity: 0.35;
+    }
+
+    a { color: inherit; }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(6, 11, 20, 0.72);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    }
+
+    .topbar-inner {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 260px;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: #07111e;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 12px 30px rgba(124, 219, 255, 0.28);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 0.98rem;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+    }
+
+    .brand p {
+      margin: 3px 0 0;
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a,
+    .btn {
+      appearance: none;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      background: rgba(15, 23, 42, 0.62);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+      cursor: pointer;
+    }
+
+    .nav a:hover,
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(124, 219, 255, 0.35);
+      background: rgba(18, 30, 53, 0.92);
+      box-shadow: 0 12px 30px rgba(3, 8, 18, 0.35);
+    }
+
+    .hero {
+      padding: 28px 0 16px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 0.9fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(17, 25, 41, 0.9), rgba(9, 15, 28, 0.88));
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-main {
+      padding: 28px;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      inset: auto -120px -120px auto;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(124, 219, 255, 0.16), transparent 70%);
+      z-index: -1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(124, 219, 255, 0.1);
+      color: #b9ecff;
+      border: 1px solid rgba(124, 219, 255, 0.16);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .hero h2 {
+      margin: 16px 0 10px;
+      font-size: clamp(2rem, 4vw, 3.45rem);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 68ch;
+      font-size: 1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .chip {
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      color: var(--text);
+      font-size: 0.88rem;
+    }
+
+    .chip strong { color: #fff; }
+
+    .hero-side {
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      min-height: 96px;
+    }
+
+    .stat label {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .stat .value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .stat .sub {
+      margin-top: 6px;
+      color: var(--muted-2);
+      font-size: 0.88rem;
+    }
+
+    .section {
+      padding: 18px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .section-head h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      max-width: 72ch;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 18px;
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .card header {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+      align-items: start;
+    }
+
+    .card h4 {
+      margin: 0;
+      font-size: 1.02rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card .meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-top: 4px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+      border: 1px solid transparent;
+    }
+
+    .badge.good { background: rgba(74, 222, 128, 0.12); color: #a8f0bf; border-color: rgba(74, 222, 128, 0.22); }
+    .badge.warn { background: rgba(251, 191, 36, 0.12); color: #ffd77b; border-color: rgba(251, 191, 36, 0.22); }
+    .badge.bad { background: rgba(251, 113, 133, 0.12); color: #ffb3c0; border-color: rgba(251, 113, 133, 0.22); }
+    .badge.neutral { background: rgba(124, 219, 255, 0.1); color: #c5f2ff; border-color: rgba(124, 219, 255, 0.18); }
+
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: baseline;
+      margin-bottom: 10px;
+    }
+
+    .metric-row strong {
+      font-size: 1.04rem;
+    }
+
+    .progress-track {
+      height: 10px;
+      background: rgba(148, 163, 184, 0.12);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 14px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 22px rgba(124, 219, 255, 0.28);
+      width: 0%;
+      transition: width 1200ms ease;
+    }
+
+    .project-kpi {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-top: 10px;
+    }
+
+    .table-like {
+      display: grid;
+      gap: 10px;
+    }
+
+    .dept-row {
+      display: grid;
+      grid-template-columns: 140px 1fr 76px;
+      gap: 14px;
+      align-items: center;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .dept-row .name {
+      font-weight: 700;
+    }
+
+    .dept-row .count {
+      text-align: right;
+      font-weight: 800;
+      color: #fff;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .bar {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.12);
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, rgba(124, 219, 255, 0.95), rgba(155, 140, 255, 0.95));
+    }
+
+    .layer {
+      display: grid;
+      gap: 10px;
+    }
+
+    .layer .layer-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .layer .layer-top strong { font-size: 1rem; }
+    .layer .layer-top span { color: var(--muted); font-size: 0.88rem; }
+
+    .repo-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .repo-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+      text-decoration: none;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .repo-link:hover {
+      transform: translateY(-1px);
+      border-color: rgba(124, 219, 255, 0.3);
+      background: rgba(124, 219, 255, 0.06);
+    }
+
+    .repo-link strong { display: block; }
+    .repo-link small { color: var(--muted); }
+
+    .risk-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .risk-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .risk-item span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      padding: 20px 0 36px;
+      color: var(--muted-2);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .copy-note {
+      color: var(--muted);
+      font-size: 0.88rem;
+      min-height: 1.2em;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .grid-4 {
+        grid-template-columns: 1fr 1fr;
+      }
+      .grid-3 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .grid-4,
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dept-row {
+        grid-template-columns: 1fr;
+      }
+
+      .dept-row .count {
+        text-align: left;
+      }
+
+      .topbar-inner {
+        align-items: start;
+      }
+
+      .nav { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand" aria-label="JAGM IT Company private dashboard">
+        <div class="brand-mark">J</div>
+        <div>
+          <h1>JAGM IT Company</h1>
+          <p>Private operating dashboard · internal only</p>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Section navigation">
+        <a href="#overview">Overview</a>
+        <a href="#c-level">C-Level View</a>
+        <a href="#initiatives">Initiatives</a>
+        <a href="#projects">Projects</a>
+        <a href="#team">Team</a>
+        <a href="#memory">Memory</a>
+        <a href="#repos">Repos</a>
+        <a href="#risks">Risks</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="shell">
+    <section class="hero" id="overview">
+      <div class="hero-grid">
+        <article class="panel hero-main">
+          <span class="eyebrow">Private company dashboard</span>
+          <h2>JAGM IT Company</h2>
+          <p>
+            Internal control plane for strategy, delivery, memory, and revenue execution.
+            This snapshot reflects the current company state: 122 AI roles, $0 revenue, and framework v1.5.
+          </p>
+          <div class="hero-meta">
+            <span class="chip"><strong>122</strong> AI roles</span>
+            <span class="chip"><strong>$0</strong> revenue</span>
+            <span class="chip"><strong>v1.5</strong> framework</span>
+            <span class="chip"><strong>4</strong> memory layers</span>
+            <span class="chip"><strong>10</strong> departments</span>
+          </div>
+          <div class="toolbar">
+            <button class="btn" id="copySummaryBtn" type="button">Copy summary</button>
+            <a class="btn" href="#risks">Review risks</a>
+          </div>
+          <div class="copy-note" id="copyStatus" aria-live="polite"></div>
+        </article>
+
+        <aside class="panel hero-side" aria-label="Company snapshot statistics">
+          <div class="stat-grid">
+            <div class="stat">
+              <label>Roles</label>
+              <div class="value" data-count="122">0</div>
+              <div class="sub">AI roles with memory contracts</div>
+            </div>
+            <div class="stat">
+              <label>Revenue</label>
+              <div class="value" data-count="0">$0</div>
+              <div class="sub">Pre-revenue stage</div>
+            </div>
+            <div class="stat">
+              <label>Framework</label>
+              <div class="value">v1.5</div>
+              <div class="sub">Stable baseline</div>
+            </div>
+            <div class="stat">
+              <label>Tests</label>
+              <div class="value" data-count="406">0</div>
+              <div class="sub">Collected test cases</div>
+            </div>
+          </div>
+          <div class="card" style="margin:0; background: rgba(255,255,255,0.03);">
+            <header>
+              <div>
+                <h4>Operating thesis</h4>
+                <div class="meta">Cash-first, systems-second, scale-third.</div>
+              </div>
+              <span class="badge neutral">Internal</span>
+            </header>
+            <p>Ship the first paid service, tighten memory taxonomy, and keep reporting factual enough to steer decisions quickly.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="c-level">
+      <div class="section-head">
+        <div>
+          <h3>C-Level View</h3>
+          <p>Roman’s executive snapshot: only summary metrics and risks. Operational detail stays with the relevant C-level owner.</p>
+        </div>
+        <span class="badge neutral">Summary only</span>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <header>
+            <div>
+              <h4>Executive metrics</h4>
+              <div class="meta">Revenue, clients, projects, and risk posture.</div>
+            </div>
+            <span class="badge neutral">Roman</span>
+          </header>
+          <div class="stat-grid">
+            <div class="stat">
+              <label>Revenue</label>
+              <div class="value">$0</div>
+              <div class="sub">Pre-revenue. First paid client remains the priority.</div>
+            </div>
+            <div class="stat">
+              <label>Clients</label>
+              <div class="value">0</div>
+              <div class="sub">No paying clients yet; pipeline is being built.</div>
+            </div>
+            <div class="stat">
+              <label>Projects</label>
+              <div class="value">5</div>
+              <div class="sub">Five active strategic projects, prioritized by cash impact.</div>
+            </div>
+            <div class="stat">
+              <label>Risks</label>
+              <div class="value">4</div>
+              <div class="sub">Watchlist risks stay visible until mitigated.</div>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <header>
+            <div>
+              <h4>Top risks</h4>
+              <div class="meta">Executive risk summary, not a task list.</div>
+            </div>
+            <span class="badge warn">Attention required</span>
+          </header>
+          <div class="risk-list">
+            <article class="risk-item">
+              <div>
+                <strong>Revenue gap</strong>
+                <span>Critical</span>
+              </div>
+              <div style="max-width: 30ch; color: var(--muted); text-align: right;">The company still needs its first paid client.</div>
+            </article>
+            <article class="risk-item">
+              <div>
+                <strong>Delivery friction</strong>
+                <span>High</span>
+              </div>
+              <div style="max-width: 30ch; color: var(--muted); text-align: right;">Too much simultaneous work can slow execution.</div>
+            </article>
+            <article class="risk-item">
+              <div>
+                <strong>Technical / memory drift</strong>
+                <span>High</span>
+              </div>
+              <div style="max-width: 30ch; color: var(--muted); text-align: right;">Company truth must stay consistent across functions.</div>
+            </article>
+            <article class="risk-item">
+              <div>
+                <strong>Market signal weakness</strong>
+                <span>Medium</span>
+              </div>
+              <div style="max-width: 30ch; color: var(--muted); text-align: right;">Positioning may need sharper proof and messaging.</div>
+            </article>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="initiatives">
+      <div class="section-head">
+        <div>
+          <h3>Initiatives</h3>
+          <p>Six active company bets, each framed to move the business toward paid work and clearer operating discipline.</p>
+        </div>
+        <span class="badge neutral">6 cards</span>
+      </div>
+      <div class="grid-3" id="initiativesGrid"></div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-head">
+        <div>
+          <h3>Projects</h3>
+          <p>Current delivery view across the main product and operating tracks.</p>
+        </div>
+        <span class="badge neutral">5 cards</span>
+      </div>
+      <div class="grid-3" id="projectsGrid"></div>
+    </section>
+
+    <section class="section" id="team">
+      <div class="section-head">
+        <div>
+          <h3>Team</h3>
+          <p>Ten departments with role distribution that totals 122 AI roles.</p>
+        </div>
+        <span class="badge neutral">122 total</span>
+      </div>
+      <div class="card">
+        <div class="table-like" id="teamGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="memory">
+      <div class="section-head">
+        <div>
+          <h3>Memory Architecture</h3>
+          <p>Four-layer memory system with department coverage and a test foundation of 406 collected checks.</p>
+        </div>
+        <span class="badge neutral">4 layers · 10 departments · 406 tests</span>
+      </div>
+      <div class="grid-4" id="memoryGrid"></div>
+    </section>
+
+    <section class="section" id="repos">
+      <div class="section-head">
+        <div>
+          <h3>Repos</h3>
+          <p>Direct links to the five core GitHub repositories referenced by the current company dashboard.</p>
+        </div>
+        <span class="badge neutral">5 links</span>
+      </div>
+      <div class="repo-list" id="repoList"></div>
+    </section>
+
+    <section class="section" id="risks">
+      <div class="section-head">
+        <div>
+          <h3>Risks</h3>
+          <p>The current watchlist: revenue, product reliability, voice pipeline quality, and memory vocabulary consistency.</p>
+        </div>
+        <span class="badge warn">Attention required</span>
+      </div>
+      <div class="risk-list" id="riskList"></div>
+    </section>
+
+    <div class="footer">
+      Confidential internal dashboard for JAGM IT Company · built as a single static HTML file with embedded CSS and JavaScript.
+    </div>
+  </main>
+
+  <script>
+    const initiatives = [
+      {
+        title: 'Audit Sprint',
+        tag: 'P0 · packaging',
+        status: 'warn',
+        owner: 'SalesO + SEDO',
+        summary: 'Turn the AI-SDLC repo audit into a repeatable paid offer with a clear scope and client-ready output.'
+      },
+      {
+        title: 'Digital Twin',
+        tag: 'P0 · packaging',
+        status: 'warn',
+        owner: 'SalesO + SEDO',
+        summary: 'Productize the founder-facing copilot so memory, advice, and proactive support become a premium service.'
+      },
+      {
+        title: 'AI Ops Retainer',
+        tag: 'P1 · recurring',
+        status: 'neutral',
+        owner: 'SalesO + PMO',
+        summary: 'Build the monthly automation and reporting retainer that converts delivery work into durable revenue.'
+      },
+      {
+        title: 'Cold Outreach',
+        tag: 'P0 · pipeline',
+        status: 'neutral',
+        owner: 'SalesO',
+        summary: 'Use GitHub and repo scanning to find prospects, qualify fit, and generate outbound opportunities.'
+      },
+      {
+        title: 'Progress Reports',
+        tag: 'P0 · reporting',
+        status: 'good',
+        owner: 'PMO',
+        summary: 'Keep the founder updated with consistent weekly digests, blockers, and decision-ready summaries.'
+      },
+      {
+        title: 'Memory Fix',
+        tag: 'P0 · architecture',
+        status: 'bad',
+        owner: 'SEDO + CTO',
+        summary: 'Resolve the taxonomy mismatch between company memory, project memory, and runtime vocabulary.'
+      }
+    ];
+
+    const projects = [
+      {
+        name: 'AI-SDLC',
+        progress: 85,
+        repo: 'jagmstar/ai-sdlc',
+        status: 'Active',
+        note: 'Taxonomy fix required before the next release.'
+      },
+      {
+        name: 'Digital Twin',
+        progress: 40,
+        repo: 'jagmstar/dt-home-personal',
+        status: 'Blocked',
+        note: 'Voice wake word and system audit are still unresolved.'
+      },
+      {
+        name: 'Drone-IBVS',
+        progress: 30,
+        repo: 'jagmstar/drone-ibvs',
+        status: 'Paused',
+        note: 'Waiting for attention once the digital twin becomes stable.'
+      },
+      {
+        name: 'Family Expenses',
+        progress: 100,
+        repo: 'jagmstar/family-expenses',
+        status: 'Live',
+        note: 'Operationally complete and under monitoring.'
+      },
+      {
+        name: 'Company Ops',
+        progress: 20,
+        repo: 'jagmstar/JagmITCompany',
+        status: 'Active',
+        note: 'Company operating system is in place but still pre-revenue.'
+      }
+    ];
+
+    const departments = [
+      { code: 'SEDO', name: 'Software Engineering', count: 30 },
+      { code: 'QAO', name: 'Quality Assurance', count: 10 },
+      { code: 'PMO', name: 'Project Management', count: 9 },
+      { code: 'DevOps', name: 'DevOps', count: 8 },
+      { code: 'SecO', name: 'Security', count: 7 },
+      { code: 'DesignO', name: 'Design', count: 12 },
+      { code: 'ResearchO', name: 'Research', count: 10 },
+      { code: 'LegalO', name: 'Legal', count: 20 },
+      { code: 'SalesO', name: 'Sales', count: 8 },
+      { code: 'FinanceO', name: 'Finance', count: 8 }
+    ];
+
+    const memoryLayers = [
+      {
+        title: 'Company',
+        subtitle: 'Global org truth',
+        details: 'Shared facts, decisions, references, and quarantine rules live at the top layer.'
+      },
+      {
+        title: 'Department',
+        subtitle: 'Per-department standards',
+        details: 'Each of the 10 departments keeps its own standards, playbooks, and working memory.'
+      },
+      {
+        title: 'Team / Project',
+        subtitle: 'Execution context',
+        details: 'Project snapshots, delivery context, and operating notes stay close to the work.'
+      },
+      {
+        title: 'Personal / Twin',
+        subtitle: 'Role-local learning',
+        details: 'Each role accumulates local learning while remaining linked to the broader system.'
+      }
+    ];
+
+    const repos = [
+      {
+        name: 'jagmstar/ai-sdlc',
+        href: 'https://github.com/jagmstar/ai-sdlc',
+        summary: 'AI-SDLC framework and product engine'
+      },
+      {
+        name: 'jagmstar/JagmITCompany',
+        href: 'https://github.com/jagmstar/JagmITCompany',
+        summary: 'Company operating repository and source of truth'
+      },
+      {
+        name: 'jagmstar/dt-home-personal',
+        href: 'https://github.com/jagmstar/dt-home-personal',
+        summary: 'Founder digital twin and voice system'
+      },
+      {
+        name: 'jagmstar/drone-ibvs',
+        href: 'https://github.com/jagmstar/drone-ibvs',
+        summary: 'Drone visual servoing project'
+      },
+      {
+        name: 'jagmstar/family-expenses',
+        href: 'https://github.com/jagmstar/family-expenses',
+        summary: 'Deployed personal finance tracker'
+      }
+    ];
+
+    const risks = [
+      {
+        label: '$0 revenue',
+        severity: 'Critical',
+        detail: 'A first paid client is still needed to validate the company model.'
+      },
+      {
+        label: 'Toast broken',
+        severity: 'High',
+        detail: 'Desktop notifications are still not visible consistently.'
+      },
+      {
+        label: 'Voice mismatch',
+        severity: 'High',
+        detail: 'Wake-word behavior and language alignment still block the digital twin.'
+      },
+      {
+        label: 'Memory taxonomy',
+        severity: 'Medium',
+        detail: 'Vocabulary drift between company and runtime layers still needs cleanup.'
+      }
+    ];
+
+    function badgeClass(status) {
+      return status === 'good' ? 'good' : status === 'warn' ? 'warn' : status === 'bad' ? 'bad' : 'neutral';
+    }
+
+    function renderInitiatives() {
+      const grid = document.getElementById('initiativesGrid');
+      grid.innerHTML = initiatives.map((item) => `
+        <article class="card">
+          <header>
+            <div>
+              <h4>${item.title}</h4>
+              <div class="meta">${item.owner}</div>
+            </div>
+            <span class="badge ${badgeClass(item.status)}">${item.tag}</span>
+          </header>
+          <p>${item.summary}</p>
+        </article>
+      `).join('');
+    }
+
+    function renderProjects() {
+      const grid = document.getElementById('projectsGrid');
+      grid.innerHTML = projects.map((project) => `
+        <article class="card">
+          <header>
+            <div>
+              <h4>${project.name}</h4>
+              <div class="meta">${project.repo}</div>
+            </div>
+            <span class="badge ${project.progress === 100 ? 'good' : project.progress >= 70 ? 'warn' : project.progress >= 40 ? 'neutral' : 'bad'}">${project.status}</span>
+          </header>
+          <div class="metric-row">
+            <strong>${project.progress}% complete</strong>
+            <span>Progress</span>
+          </div>
+          <div class="progress-track" aria-hidden="true"><div class="progress-fill" data-width="${project.progress}"></div></div>
+          <div class="project-kpi">
+            <span>${project.note}</span>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function renderTeam() {
+      const grid = document.getElementById('teamGrid');
+      grid.innerHTML = departments.map((dept) => `
+        <div class="dept-row">
+          <div>
+            <div class="name">${dept.code}</div>
+            <div class="meta">${dept.name}</div>
+          </div>
+          <div class="bar" aria-hidden="true"><span style="width:${Math.round(dept.count / 30 * 100)}%"></span></div>
+          <div class="count">${dept.count}</div>
+        </div>
+      `).join('');
+    }
+
+    function renderMemory() {
+      const grid = document.getElementById('memoryGrid');
+      grid.innerHTML = memoryLayers.map((layer, index) => `
+        <article class="card layer">
+          <div class="layer-top">
+            <strong>${index + 1}. ${layer.title}</strong>
+            <span>${layer.subtitle}</span>
+          </div>
+          <p>${layer.details}</p>
+        </article>
+      `).join('');
+    }
+
+    function renderRepos() {
+      const list = document.getElementById('repoList');
+      list.innerHTML = repos.map((repo) => `
+        <a class="repo-link" href="${repo.href}" target="_blank" rel="noreferrer noopener">
+          <div>
+            <strong>${repo.name}</strong>
+            <small>${repo.summary}</small>
+          </div>
+          <span class="badge neutral">GitHub</span>
+        </a>
+      `).join('');
+    }
+
+    function renderRisks() {
+      const list = document.getElementById('riskList');
+      list.innerHTML = risks.map((risk) => `
+        <article class="risk-item">
+          <div>
+            <strong>${risk.label}</strong>
+            <span>Severity: ${risk.severity}</span>
+          </div>
+          <div style="max-width: 56ch; color: var(--muted); text-align: right;">${risk.detail}</div>
+        </article>
+      `).join('');
+    }
+
+    function animateCounts() {
+      const counters = document.querySelectorAll('[data-count]');
+      counters.forEach((el) => {
+        const target = Number(el.dataset.count || 0);
+        const duration = 1200;
+        const start = performance.now();
+        const isMoney = el.textContent.trim().startsWith('$');
+        const isAlreadyStatic = el.textContent.includes('v1.5');
+        if (isAlreadyStatic) return;
+
+        function tick(now) {
+          const p = Math.min((now - start) / duration, 1);
+          const value = Math.round(target * p);
+          el.textContent = isMoney ? `$${value}` : value.toLocaleString();
+          if (p < 1) requestAnimationFrame(tick);
+        }
+
+        requestAnimationFrame(tick);
+      });
+    }
+
+    function animateBars() {
+      document.querySelectorAll('.progress-fill').forEach((bar) => {
+        const width = bar.dataset.width || '0';
+        requestAnimationFrame(() => {
+          bar.style.width = `${width}%`;
+        });
+      });
+    }
+
+    function bindCopySummary() {
+      const btn = document.getElementById('copySummaryBtn');
+      const status = document.getElementById('copyStatus');
+      btn.addEventListener('click', async () => {
+        const summary = 'JAGM IT Company · 122 AI roles · $0 revenue · framework v1.5 · 4 memory layers · 10 departments.';
+        try {
+          await navigator.clipboard.writeText(summary);
+          status.textContent = 'Summary copied to clipboard.';
+        } catch {
+          status.textContent = 'Clipboard unavailable in this context.';
+        }
+        window.setTimeout(() => { status.textContent = ''; }, 2500);
+      });
+    }
+
+    renderInitiatives();
+    renderProjects();
+    renderTeam();
+    renderMemory();
+    renderRepos();
+    renderRisks();
+    bindCopySummary();
+    window.requestAnimationFrame(() => {
+      animateCounts();
+      animateBars();
+    });
+  </script>
+</body>
+</html>
