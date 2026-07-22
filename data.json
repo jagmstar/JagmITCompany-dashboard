@@ -1,138 +1,42 @@
 {
-  "generatedAt": "2026-07-21T23:10:11Z",
+  "generatedAt": "2026-07-22T08:16:00Z",
   "revenue": 0,
   "departmentCount": 10,
   "memoryLayers": 4,
-  "roleProfilesCount": 133,
-  "agentsCount": 13,
-  "openIssuesCount": 30,
-  "repoCount": 18,
+  "roleProfilesCount": 134,
+  "agentsCount": 14,
+  "agentsModel": "ollama/qwen2.5:7b (local, free)",
+  "openIssuesCount": 152,
+  "closedIssues24h": 154,
+  "noAssigneeCount": 520,
+  "repoCount": 5,
+  "activeRepos": [
+    { "name": "ai-sdlc", "open": 6, "closed24h": 80, "url": "https://github.com/jagmstar/ai-sdlc" },
+    { "name": "drone-ibvs", "open": 0, "closed24h": 8, "url": "https://github.com/jagmstar/drone-ibvs" },
+    { "name": "JagmITCompany", "open": 0, "closed24h": 64, "url": "https://github.com/jagmstar/JagmITCompany" },
+    { "name": "family-expenses", "open": 4, "closed24h": 2, "url": "https://github.com/jagmstar/family-expenses" },
+    { "name": "RomanControllingEverything", "open": 142, "closed24h": 0, "url": "https://github.com/jagmstar/RomanControllingEverything" }
+  ],
+  "commitsToday": 11,
+  "testsPassedToday": 1000,
+  "agentsResponded": [
+    { "name": "CEO-JAGM", "status": "responded", "model": "qwen2.5:7b" },
+    { "name": "CTO-JAGM", "status": "responded", "model": "qwen2.5:7b" },
+    { "name": "Dashboard-Agent", "status": "responded", "model": "qwen2.5:7b" },
+    { "name": "Memory-Warden", "status": "responded", "model": "qwen2.5:7b" },
+    { "name": "CFO-JAGM", "status": "thinking", "model": "qwen2.5:7b" },
+    { "name": "CMO-JAGM", "status": "thinking", "model": "qwen2.5:7b" },
+    { "name": "CISO-JAGM", "status": "thinking", "model": "qwen2.5:7b" },
+    { "name": "PMO-Lead", "status": "thinking", "model": "qwen2.5:7b" },
+    { "name": "QAO-Lead", "status": "thinking", "model": "qwen2.5:7b" },
+    { "name": "SEDO-Lead", "status": "thinking", "model": "qwen2.5:7b" },
+    { "name": "Audit-Agent", "status": "thinking", "model": "qwen2.5:7b" }
+  ],
   "repos": [
-    {
-      "name": "AdvancedDataGridView",
-      "fullName": "jagmstar/AdvancedDataGridView",
-      "url": "https://github.com/jagmstar/AdvancedDataGridView",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 0
-    },
-    {
-      "name": "ai-sdlc",
-      "fullName": "jagmstar/ai-sdlc",
-      "url": "https://github.com/jagmstar/ai-sdlc",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 26
-    },
-    {
-      "name": "CheckHelperAssembly",
-      "fullName": "jagmstar/CheckHelperAssembly",
-      "url": "https://github.com/jagmstar/CheckHelperAssembly",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 0
-    },
-    {
-      "name": "CommonUtilAssembly",
-      "fullName": "jagmstar/CommonUtilAssembly",
-      "url": "https://github.com/jagmstar/CommonUtilAssembly",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 0
-    },
-    {
-      "name": "drone-ibvs",
-      "fullName": "jagmstar/drone-ibvs",
-      "url": "https://github.com/jagmstar/drone-ibvs",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 0
-    },
-    {
-      "name": "dt-home-memory-backup-private",
-      "fullName": "jagmstar/dt-home-memory-backup-private",
-      "url": "https://github.com/jagmstar/dt-home-memory-backup-private",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 0
-    },
-    {
-      "name": "dt-home-personal",
-      "fullName": "jagmstar/dt-home-personal",
-      "url": "https://github.com/jagmstar/dt-home-personal",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 0
-    },
-    {
-      "name": "dt-home-wiki",
-      "fullName": "jagmstar/dt-home-wiki",
-      "url": "https://github.com/jagmstar/dt-home-wiki",
-      "visibility": "PUBLIC",
-      "openIssuesCount": 0
-    },
-    {
-      "name": "family-expenses",
-      "fullName": "jagmstar/family-expenses",
-      "url": "https://github.com/jagmstar/family-expenses",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 2
-    },
-    {
-      "name": "Family-Spanding",
-      "fullName": "jagmstar/Family-Spanding",
-      "url": "https://github.com/jagmstar/Family-Spanding",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 0
-    },
-    {
-      "name": "FileSystemHelper",
-      "fullName": "jagmstar/FileSystemHelper",
-      "url": "https://github.com/jagmstar/FileSystemHelper",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 0
-    },
-    {
-      "name": "InteropWraper",
-      "fullName": "jagmstar/InteropWraper",
-      "url": "https://github.com/jagmstar/InteropWraper",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 0
-    },
-    {
-      "name": "JagmITCompany",
-      "fullName": "jagmstar/JagmITCompany",
-      "url": "https://github.com/jagmstar/JagmITCompany",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 2
-    },
-    {
-      "name": "JagmITCompany-dashboard",
-      "fullName": "jagmstar/JagmITCompany-dashboard",
-      "url": "https://github.com/jagmstar/JagmITCompany-dashboard",
-      "visibility": "PUBLIC",
-      "openIssuesCount": 0
-    },
-    {
-      "name": "practic19",
-      "fullName": "jagmstar/practic19",
-      "url": "https://github.com/jagmstar/practic19",
-      "visibility": "PUBLIC",
-      "openIssuesCount": 0
-    },
-    {
-      "name": "SkypeLibrary",
-      "fullName": "jagmstar/SkypeLibrary",
-      "url": "https://github.com/jagmstar/SkypeLibrary",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 0
-    },
-    {
-      "name": "SQLiteExt",
-      "fullName": "jagmstar/SQLiteExt",
-      "url": "https://github.com/jagmstar/SQLiteExt",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 0
-    },
-    {
-      "name": "WebScraperCore",
-      "fullName": "jagmstar/WebScraperCore",
-      "url": "https://github.com/jagmstar/WebScraperCore",
-      "visibility": "PRIVATE",
-      "openIssuesCount": 0
-    }
+    { "name": "ai-sdlc", "fullName": "jagmstar/ai-sdlc", "url": "https://github.com/jagmstar/ai-sdlc", "visibility": "PRIVATE", "openIssuesCount": 6 },
+    { "name": "drone-ibvs", "fullName": "jagmstar/drone-ibvs", "url": "https://github.com/jagmstar/drone-ibvs", "visibility": "PRIVATE", "openIssuesCount": 0 },
+    { "name": "JagmITCompany", "fullName": "jagmstar/JagmITCompany", "url": "https://github.com/jagmstar/JagmITCompany", "visibility": "PRIVATE", "openIssuesCount": 0 },
+    { "name": "family-expenses", "fullName": "jagmstar/family-expenses", "url": "https://github.com/jagmstar/family-expenses", "visibility": "PRIVATE", "openIssuesCount": 4 },
+    { "name": "RomanControllingEverything", "fullName": "jagmstar/RomanControllingEverything", "url": "https://github.com/jagmstar/RomanControllingEverything", "visibility": "PUBLIC", "openIssuesCount": 142 }
   ]
 }
