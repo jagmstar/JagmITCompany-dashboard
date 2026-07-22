@@ -1,76 +1,199 @@
 {
-  "generatedAt": "2026-07-22T08:58:33.888637Z",
-  "source": "F:\\dt-home\\meta\\company-dashboard.md + F:\\dt-home\\meta\\.company-dashboard.json",
+  "generatedAt": "2026-07-22T15:56:57Z",
   "summary": {
-    "repoCount": 5,
-    "serverAgentsAlive": 12,
-    "companyStatus": "pre-revenue",
-    "companyStatusLabel": "Без виручки",
+    "repos": 8,
+    "openIssues": 156,
+    "totalIssues": 583,
+    "liveAgents": 13,
+    "roleProfiles": 133,
+    "departments": 10,
+    "revenue": 0,
+    "revenueLabel": "$0",
+    "clients": 0,
     "budget": 0,
-    "budgetLabel": "0",
-    "ticketsAudited": 357,
-    "ticketsFake": 7,
-    "ticketsDefective": 2,
-    "ticketsSuspect": 25
+    "status": "pre-revenue",
+    "statusUk": "Без виручки"
   },
   "repos": [
     {
       "name": "ai-sdlc",
-      "fullName": "jagmstar/ai-sdlc",
       "url": "https://github.com/jagmstar/ai-sdlc",
-      "tickets": 6
+      "openIssues": 0,
+      "totalIssues": 240
     },
     {
       "name": "drone-ibvs",
-      "fullName": "jagmstar/drone-ibvs",
       "url": "https://github.com/jagmstar/drone-ibvs",
-      "tickets": 0
+      "openIssues": 0,
+      "totalIssues": 21
     },
     {
       "name": "JagmITCompany",
-      "fullName": "jagmstar/JagmITCompany",
       "url": "https://github.com/jagmstar/JagmITCompany",
-      "tickets": 0
+      "openIssues": 0,
+      "totalIssues": 70
     },
     {
       "name": "family-expenses",
-      "fullName": "jagmstar/family-expenses",
       "url": "https://github.com/jagmstar/family-expenses",
-      "tickets": 4
+      "openIssues": 3,
+      "totalIssues": 72
     },
     {
       "name": "RomanControllingEverything",
-      "fullName": "jagmstar/RomanControllingEverything",
       "url": "https://github.com/jagmstar/RomanControllingEverything",
-      "tickets": 142
+      "openIssues": 152,
+      "totalIssues": 166
+    },
+    {
+      "name": "dm-twin",
+      "url": "https://github.com/jagmstar/dm-twin",
+      "openIssues": 1,
+      "totalIssues": 14
+    },
+    {
+      "name": "dm-twin-web",
+      "url": "https://github.com/jagmstar/dm-twin-web",
+      "openIssues": 0,
+      "totalIssues": 0
+    },
+    {
+      "name": "JagmITCompany-dashboard",
+      "url": "https://github.com/jagmstar/JagmITCompany-dashboard",
+      "openIssues": 0,
+      "totalIssues": 0
     }
   ],
-  "priorities": [
-    "Загасити P0 по фейкових, дефектних і підозрілих квитках.",
-    "Тримати 5 репозиторіїв під контролем і без розсинхрону.",
-    "Підтримувати 12 серверних агентів у стані ONLINE.",
-    "Зберегти режим pre-revenue і не витрачати бюджет."
-  ],
-  "serverAgents": [
-    "CEO-JAGM",
-    "CTO-JAGM",
-    "QAO-Lead",
-    "SEDO-Lead",
-    "Audit-Agent",
-    "CISO-JAGM",
-    "CMO-JAGM",
-    "Memory-Warden",
-    "PMO-Lead",
-    "CFO-JAGM",
+  "agents": [
     "Superman-sleeptime",
-    "Superman"
+    "Memory-Warden",
+    "Superman",
+    "CEO-JAGM",
+    "CMO-JAGM",
+    "SEDO-Lead",
+    "PMO-Lead",
+    "CTO-JAGM",
+    "CFO-JAGM",
+    "Dashboard-Agent",
+    "CISO-JAGM",
+    "QAO-Lead",
+    "Audit-Agent"
   ],
-  "audit": {
-    "note": "357 квитків проаудитовано",
-    "breakdown": {
-      "fake": 7,
-      "defective": 2,
-      "suspect": 25
+  "departments": [
+    {
+      "id": "SEDO",
+      "name": "Software Engineering",
+      "head": "SEDO-Lead"
+    },
+    {
+      "id": "QAO",
+      "name": "Quality Assurance",
+      "head": "QAO-Lead"
+    },
+    {
+      "id": "PMO",
+      "name": "Project Management",
+      "head": "PMO-Lead"
+    },
+    {
+      "id": "DevOps",
+      "name": "DevOps",
+      "head": "DevOps-Lead"
+    },
+    {
+      "id": "SecO",
+      "name": "Security",
+      "head": "CISO-JAGM"
+    },
+    {
+      "id": "DesignO",
+      "name": "Design",
+      "head": "DesignO-Lead"
+    },
+    {
+      "id": "ResearchO",
+      "name": "Research",
+      "head": "ResearchO-Lead"
+    },
+    {
+      "id": "LegalO",
+      "name": "Legal",
+      "head": "LegalO-Lead"
+    },
+    {
+      "id": "SalesO",
+      "name": "Sales",
+      "head": "CMO-JAGM"
+    },
+    {
+      "id": "FinanceO",
+      "name": "Finance",
+      "head": "CFO-JAGM"
     }
-  }
+  ],
+  "cLevel": [
+    {
+      "role": "CEO",
+      "agent": "CEO-JAGM",
+      "focus": "Strategy & vision"
+    },
+    {
+      "role": "CTO",
+      "agent": "CTO-JAGM",
+      "focus": "Technical architecture"
+    },
+    {
+      "role": "CFO",
+      "agent": "CFO-JAGM",
+      "focus": "Revenue & finance"
+    },
+    {
+      "role": "CMO",
+      "agent": "CMO-JAGM",
+      "focus": "Market & sales"
+    },
+    {
+      "role": "CISO",
+      "agent": "CISO-JAGM",
+      "focus": "Security & compliance"
+    }
+  ],
+  "projects": [
+    {
+      "name": "AI-SDLC Framework",
+      "repo": "ai-sdlc",
+      "status": "active",
+      "phase": "v1.5 — 240 tickets, 0 open"
+    },
+    {
+      "name": "Drone-IBVS",
+      "repo": "drone-ibvs",
+      "status": "active",
+      "phase": "Research — 21 tickets, 0 open"
+    },
+    {
+      "name": "Family Expenses",
+      "repo": "family-expenses",
+      "status": "deployed",
+      "phase": "Live on Render/Vercel — 3 open"
+    },
+    {
+      "name": "DM Twin",
+      "repo": "dm-twin",
+      "status": "active",
+      "phase": "Phase 1 — 14 tickets, 2 open"
+    },
+    {
+      "name": "JagmITCompany",
+      "repo": "JagmITCompany",
+      "status": "active",
+      "phase": "Operational — 70 tickets, 0 open"
+    },
+    {
+      "name": "Control Board",
+      "repo": "RomanControllingEverything",
+      "status": "active",
+      "phase": "152 open tickets"
+    }
+  ]
 }
