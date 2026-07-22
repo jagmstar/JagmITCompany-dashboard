@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T11:27:48.692864",
+  "generated_at": "2026-07-22T11:30:21.598000",
   "agents": [
     {
       "name": "CEO-JAGM",
@@ -72,7 +72,7 @@
     {
       "name": "ai-sdlc",
       "url": "https://github.com/jagmstar/ai-sdlc",
-      "open_issues": 1,
+      "open_issues": 6,
       "last_commit": "fix(#235): harden structural tests for role profiles and integration checks.\n\nрџ‘ѕ Generated with [Lett (a3802ff)"
     },
     {
@@ -90,13 +90,13 @@
     {
       "name": "family-expenses",
       "url": "https://github.com/jagmstar/family-expenses",
-      "open_issues": 1,
+      "open_issues": 4,
       "last_commit": "fix(#152,#156): recalculate wallet balances from ledger + seed demo users on non-prod startup (80d72b6)"
     },
     {
       "name": "RomanControllingEverything",
       "url": "https://github.com/jagmstar/RomanControllingEverything",
-      "open_issues": 1,
+      "open_issues": 100,
       "last_commit": ""
     }
   ],
