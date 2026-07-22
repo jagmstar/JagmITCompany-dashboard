@@ -1,42 +1,76 @@
 {
-  "generatedAt": "2026-07-22T08:16:00Z",
-  "revenue": 0,
-  "departmentCount": 10,
-  "memoryLayers": 4,
-  "roleProfilesCount": 134,
-  "agentsCount": 14,
-  "agentsModel": "ollama/qwen2.5:7b (local, free)",
-  "openIssuesCount": 152,
-  "closedIssues24h": 154,
-  "noAssigneeCount": 520,
-  "repoCount": 5,
-  "activeRepos": [
-    { "name": "ai-sdlc", "open": 6, "closed24h": 80, "url": "https://github.com/jagmstar/ai-sdlc" },
-    { "name": "drone-ibvs", "open": 0, "closed24h": 8, "url": "https://github.com/jagmstar/drone-ibvs" },
-    { "name": "JagmITCompany", "open": 0, "closed24h": 64, "url": "https://github.com/jagmstar/JagmITCompany" },
-    { "name": "family-expenses", "open": 4, "closed24h": 2, "url": "https://github.com/jagmstar/family-expenses" },
-    { "name": "RomanControllingEverything", "open": 142, "closed24h": 0, "url": "https://github.com/jagmstar/RomanControllingEverything" }
-  ],
-  "commitsToday": 11,
-  "testsPassedToday": 1000,
-  "agentsResponded": [
-    { "name": "CEO-JAGM", "status": "responded", "model": "qwen2.5:7b" },
-    { "name": "CTO-JAGM", "status": "responded", "model": "qwen2.5:7b" },
-    { "name": "Dashboard-Agent", "status": "responded", "model": "qwen2.5:7b" },
-    { "name": "Memory-Warden", "status": "responded", "model": "qwen2.5:7b" },
-    { "name": "CFO-JAGM", "status": "thinking", "model": "qwen2.5:7b" },
-    { "name": "CMO-JAGM", "status": "thinking", "model": "qwen2.5:7b" },
-    { "name": "CISO-JAGM", "status": "thinking", "model": "qwen2.5:7b" },
-    { "name": "PMO-Lead", "status": "thinking", "model": "qwen2.5:7b" },
-    { "name": "QAO-Lead", "status": "thinking", "model": "qwen2.5:7b" },
-    { "name": "SEDO-Lead", "status": "thinking", "model": "qwen2.5:7b" },
-    { "name": "Audit-Agent", "status": "thinking", "model": "qwen2.5:7b" }
-  ],
+  "generatedAt": "2026-07-22T08:58:33.888637Z",
+  "source": "F:\\dt-home\\meta\\company-dashboard.md + F:\\dt-home\\meta\\.company-dashboard.json",
+  "summary": {
+    "repoCount": 5,
+    "serverAgentsAlive": 12,
+    "companyStatus": "pre-revenue",
+    "companyStatusLabel": "Без виручки",
+    "budget": 0,
+    "budgetLabel": "0",
+    "ticketsAudited": 357,
+    "ticketsFake": 7,
+    "ticketsDefective": 2,
+    "ticketsSuspect": 25
+  },
   "repos": [
-    { "name": "ai-sdlc", "fullName": "jagmstar/ai-sdlc", "url": "https://github.com/jagmstar/ai-sdlc", "visibility": "PRIVATE", "openIssuesCount": 6 },
-    { "name": "drone-ibvs", "fullName": "jagmstar/drone-ibvs", "url": "https://github.com/jagmstar/drone-ibvs", "visibility": "PRIVATE", "openIssuesCount": 0 },
-    { "name": "JagmITCompany", "fullName": "jagmstar/JagmITCompany", "url": "https://github.com/jagmstar/JagmITCompany", "visibility": "PRIVATE", "openIssuesCount": 0 },
-    { "name": "family-expenses", "fullName": "jagmstar/family-expenses", "url": "https://github.com/jagmstar/family-expenses", "visibility": "PRIVATE", "openIssuesCount": 4 },
-    { "name": "RomanControllingEverything", "fullName": "jagmstar/RomanControllingEverything", "url": "https://github.com/jagmstar/RomanControllingEverything", "visibility": "PUBLIC", "openIssuesCount": 142 }
-  ]
+    {
+      "name": "ai-sdlc",
+      "fullName": "jagmstar/ai-sdlc",
+      "url": "https://github.com/jagmstar/ai-sdlc",
+      "tickets": 6
+    },
+    {
+      "name": "drone-ibvs",
+      "fullName": "jagmstar/drone-ibvs",
+      "url": "https://github.com/jagmstar/drone-ibvs",
+      "tickets": 0
+    },
+    {
+      "name": "JagmITCompany",
+      "fullName": "jagmstar/JagmITCompany",
+      "url": "https://github.com/jagmstar/JagmITCompany",
+      "tickets": 0
+    },
+    {
+      "name": "family-expenses",
+      "fullName": "jagmstar/family-expenses",
+      "url": "https://github.com/jagmstar/family-expenses",
+      "tickets": 4
+    },
+    {
+      "name": "RomanControllingEverything",
+      "fullName": "jagmstar/RomanControllingEverything",
+      "url": "https://github.com/jagmstar/RomanControllingEverything",
+      "tickets": 142
+    }
+  ],
+  "priorities": [
+    "Загасити P0 по фейкових, дефектних і підозрілих квитках.",
+    "Тримати 5 репозиторіїв під контролем і без розсинхрону.",
+    "Підтримувати 12 серверних агентів у стані ONLINE.",
+    "Зберегти режим pre-revenue і не витрачати бюджет."
+  ],
+  "serverAgents": [
+    "CEO-JAGM",
+    "CTO-JAGM",
+    "QAO-Lead",
+    "SEDO-Lead",
+    "Audit-Agent",
+    "CISO-JAGM",
+    "CMO-JAGM",
+    "Memory-Warden",
+    "PMO-Lead",
+    "CFO-JAGM",
+    "Superman-sleeptime",
+    "Superman"
+  ],
+  "audit": {
+    "note": "357 квитків проаудитовано",
+    "breakdown": {
+      "fake": 7,
+      "defective": 2,
+      "suspect": 25
+    }
+  }
 }
