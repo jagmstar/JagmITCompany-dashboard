@@ -1,71 +1,71 @@
 {
-  "generated_at": "2026-07-22T11:21:44.187011",
+  "generated_at": "2026-07-22T11:27:48.692864",
   "agents": [
     {
       "name": "CEO-JAGM",
-      "status": "idle",
-      "last_message": "",
-      "last_response": ""
+      "status": "responded",
+      "last_message": "Sure, here are the directives:\n\n1. **Company Strategy:** Our strategy is to build and maintain a robust IT infrastructure for digital twins, focusing on scalability, security, and ",
+      "last_response": "2026-07-22T08:18:12+00:00"
     },
     {
       "name": "CTO-JAGM",
-      "status": "idle",
-      "last_message": "",
-      "last_response": ""
+      "status": "responded",
+      "last_message": "1) The AI-SDLC framework runs without issues.\n2) Hanging test files (`test_sdlc_lint`, `test_critical_paths`) are breaking operations.\n3) Fix hanging tests and optimize subprocess ",
+      "last_response": "2026-07-22T07:57:35+00:00"
     },
     {
       "name": "CFO-JAGM",
-      "status": "idle",
-      "last_message": "",
-      "last_response": ""
+      "status": "responded",
+      "last_message": "[role-name] 1) **Current Revenue:** No specific revenue figures provided. Need updated sales data.\n\n2) **Current Costs:** \n   - Operational costs: Tracking closely.\n   - Developmen",
+      "last_response": "2026-07-22T08:14:25+00:00"
     },
     {
       "name": "CMO-JAGM",
-      "status": "idle",
-      "last_message": "",
-      "last_response": ""
+      "status": "responded",
+      "last_message": "[cmo] 1) Services: AI-driven DevOps tools, automated testing, predictive analytics, security monitoring.\n2) Competitors: IBM, SAP, Microsoft, Google Cloud.\n3) Differentiation: Spec",
+      "last_response": "2026-07-22T08:16:14+00:00"
     },
     {
       "name": "CISO-JAGM",
-      "status": "idle",
-      "last_message": "",
-      "last_response": ""
+      "status": "responded",
+      "last_message": "[security-engineer] Our top security risks include outdated dependencies, misconfigured S3 buckets, and insufficient logging for sensitive operations. Required measures: update dep",
+      "last_response": "2026-07-22T08:15:11+00:00"
     },
     {
       "name": "PMO-Lead",
-      "status": "idle",
-      "last_message": "",
-      "last_response": ""
+      "status": "responded",
+      "last_message": "Currently, no active projects are listed in recent conversations. Please verify the status of your projects through other means.",
+      "last_response": "2026-07-22T08:20:09+00:00"
     },
     {
       "name": "QAO-Lead",
-      "status": "idle",
-      "last_message": "",
-      "last_response": ""
+      "status": "responded",
+      "last_message": "1) Our QA process involves drafting test plans from PRDs, auditing existing tests against ACs, and writing regression tests for bug fixes. We prioritize coverage and adherence to I",
+      "last_response": "2026-07-22T08:17:03+00:00"
     },
     {
       "name": "SEDO-Lead",
-      "status": "idle",
-      "last_message": "",
-      "last_response": ""
+      "status": "responded",
+      "last_message": "You are SEDO-Lead (Software Engineering Department) of JAGM IT Company. Assess in English: 1) What is our engineering capacity? 2) What are the top engineering priorities? 3) What ",
+      "last_response": "2026-07-22T08:17:04+00:00"
     },
     {
       "name": "Audit-Agent",
-      "status": "idle",
-      "last_message": "",
-      "last_response": ""
+      "status": "responded",
+      "last_message": "1) No audits have been recorded in recent conversations.\n2) Therefore, there are no findings to report.\n3) However, it's essential to start auditing newly implemented features and ",
+      "last_response": "2026-07-22T08:20:57+00:00"
     },
     {
       "name": "Dashboard-Agent",
-      "status": "idle",
-      "last_message": "",
-      "last_response": ""
+      "status": "responded",
+      "last_message": "Certainly! Here's a brief report on the current company health:\n\n- **Repositories:** 42\n- **Open Issues:** 157\n- **Status:** All repositories and issues are in good health with no ",
+      "last_response": "2026-07-22T07:58:05+00:00"
     },
     {
       "name": "Memory-Warden",
-      "status": "idle",
-      "last_message": "",
-      "last_response": ""
+      "status": "responded",
+      "last_message": "### Daily Memory Health Report\n\n**Total Facts per Tier:**\n- **Company:** 3 facts\n- **Department:** 7 facts (3 in R&D, 2 in HR, 1 in Finance, 1 in Marketing)\n- **Project:** 5 facts ",
+      "last_response": "2026-07-22T07:58:58+00:00"
     }
   ],
   "repos": [
@@ -73,25 +73,25 @@
       "name": "ai-sdlc",
       "url": "https://github.com/jagmstar/ai-sdlc",
       "open_issues": 1,
-      "last_commit": ""
+      "last_commit": "fix(#235): harden structural tests for role profiles and integration checks.\n\nрџ‘ѕ Generated with [Lett (a3802ff)"
     },
     {
       "name": "drone-ibvs",
       "url": "https://github.com/jagmstar/drone-ibvs",
       "open_issues": 0,
-      "last_commit": ""
+      "last_commit": "Harden relocalization and runtime validation.\n\nрџ‘ѕ Generated with [Letta Code](https://letta.com)\n\nCo- (e1e1ef1)"
     },
     {
       "name": "JagmITCompany",
       "url": "https://github.com/jagmstar/JagmITCompany",
       "open_issues": 0,
-      "last_commit": ""
+      "last_commit": "docs: add AI-SDLC team charters.\n\nрџ‘ѕ Generated with [Letta Code](https://letta.com)\n\nCo-Authored-By:  (633b34e)"
     },
     {
       "name": "family-expenses",
       "url": "https://github.com/jagmstar/family-expenses",
       "open_issues": 1,
-      "last_commit": ""
+      "last_commit": "fix(#152,#156): recalculate wallet balances from ledger + seed demo users on non-prod startup (80d72b6)"
     },
     {
       "name": "RomanControllingEverything",
