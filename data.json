@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T17:39:48Z",
+  "generatedAt": "2026-07-22T17:44:49Z",
   "summary": {
     "repos": 8,
     "openIssues": 100,
@@ -65,19 +65,19 @@
     }
   ],
   "agents": [
+    "CEO-JAGM",
+    "Audit-Agent",
+    "CTO-JAGM",
+    "Superman-sleeptime",
+    "Superman",
+    "QAO-Lead",
+    "SEDO-Lead",
+    "PMO-Lead",
+    "Dashboard-Agent",
+    "CMO-JAGM",
     "Memory-Warden",
     "CFO-JAGM",
-    "Superman-sleeptime",
-    "CISO-JAGM",
-    "Dashboard-Agent",
-    "CTO-JAGM",
-    "QAO-Lead",
-    "Superman",
-    "PMO-Lead",
-    "CEO-JAGM",
-    "SEDO-Lead",
-    "CMO-JAGM",
-    "Audit-Agent"
+    "CISO-JAGM"
   ],
   "departments": [
     {
