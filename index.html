@@ -3,143 +3,91 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JAGM IT Company — Live Operations</title>
-<meta http-equiv="refresh" content="30">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>JAGM IT Company — Live</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:#0f172a; color:#e5e7eb; font-family:'Segoe UI',system-ui,sans-serif; padding:20px; }
-  h1 { font-size:24px; margin-bottom:4px; }
-  .subtitle { color:#6b7280; font-size:13px; margin-bottom:20px; }
-  .grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:20px; }
-  .card { background:#1e293b; border-radius:12px; padding:20px; border:1px solid #334155; }
-  .card h2 { font-size:16px; margin-bottom:12px; color:#f1f5f9; }
-  table { width:100%; border-collapse:collapse; }
-  th { text-align:left; padding:8px; font-size:11px; color:#6b7280; text-transform:uppercase; border-bottom:1px solid #334155; }
-  td { padding:8px; border-bottom:1px solid #1f2937; font-size:13px; }
-  .live { display:inline-block; width:8px; height:8px; background:#22c55e; border-radius:50%; margin-right:6px; animation:pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-  .timestamp { color:#6b7280; font-size:12px; }
-  .full { grid-column:1/-1; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0e17;color:#e5e7eb;font-family:'Segoe UI',system-ui,sans-serif;padding:20px;min-height:100vh}
+h1{font-size:22px;margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.subtitle{color:#6b7280;font-size:12px;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:768px){.grid{grid-template-columns:1fr}}
+.card{background:#111827;border-radius:10px;padding:16px;border:1px solid #1f2937}
+.card h2{font-size:14px;margin-bottom:10px;color:#f1f5f9;display:flex;align-items:center;gap:6px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:6px;font-size:10px;color:#4b5563;text-transform:uppercase;border-bottom:1px solid #1f2937}
+td{padding:6px;border-bottom:1px solid #111827;font-size:12px}
+.live{display:inline-block;width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.full{grid-column:1/-1}
+.green{color:#22c55e}.red{color:#ef4444}.gray{color:#6b7280}.yellow{color:#f59e0b}.blue{color:#60a5fa}
+.timestamp{color:#4b5563;font-size:11px;margin-top:8px}
+.loading{color:#6b7280;font-size:13px;padding:20px;text-align:center}
+.commit{padding:5px 0;border-bottom:1px solid #111827;font-size:12px}
+.commit .repo{color:#60a5fa;font-weight:600;margin-right:8px}
+.commit .msg{color:#9ca3af}
+.agent-msg{color:#9ca3af;font-size:11px;max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 </style>
 </head>
 <body>
-  <h1><span class="live"></span>JAGM IT Company — Live Operations</h1>
-  <div class="subtitle">Real-time visibility · Auto-refresh 30s · Updated: 2026-07-22 11:21:44 UTC</div>
-  
-  <div class="grid">
-    <div class="card">
-      <h2>Digital Twins — 11 agents on qwen2.5:7b (local, free)</h2>
-      <table>
-        <tr><th>Agent</th><th>Status</th><th>Last Response</th><th>Time</th></tr>
-        
-        <tr>
-          <td style="font-weight:600;color:#e5e7eb">CEO-JAGM</td>
-          <td style="color:#6b7280">⏳ idle</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-          <td style="color:#6b7280;font-size:11px"></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;color:#e5e7eb">CTO-JAGM</td>
-          <td style="color:#6b7280">⏳ idle</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-          <td style="color:#6b7280;font-size:11px"></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;color:#e5e7eb">CFO-JAGM</td>
-          <td style="color:#6b7280">⏳ idle</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-          <td style="color:#6b7280;font-size:11px"></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;color:#e5e7eb">CMO-JAGM</td>
-          <td style="color:#6b7280">⏳ idle</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-          <td style="color:#6b7280;font-size:11px"></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;color:#e5e7eb">CISO-JAGM</td>
-          <td style="color:#6b7280">⏳ idle</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-          <td style="color:#6b7280;font-size:11px"></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;color:#e5e7eb">PMO-Lead</td>
-          <td style="color:#6b7280">⏳ idle</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-          <td style="color:#6b7280;font-size:11px"></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;color:#e5e7eb">QAO-Lead</td>
-          <td style="color:#6b7280">⏳ idle</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-          <td style="color:#6b7280;font-size:11px"></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;color:#e5e7eb">SEDO-Lead</td>
-          <td style="color:#6b7280">⏳ idle</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-          <td style="color:#6b7280;font-size:11px"></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;color:#e5e7eb">Audit-Agent</td>
-          <td style="color:#6b7280">⏳ idle</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-          <td style="color:#6b7280;font-size:11px"></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;color:#e5e7eb">Dashboard-Agent</td>
-          <td style="color:#6b7280">⏳ idle</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-          <td style="color:#6b7280;font-size:11px"></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600;color:#e5e7eb">Memory-Warden</td>
-          <td style="color:#6b7280">⏳ idle</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-          <td style="color:#6b7280;font-size:11px"></td>
-        </tr>
-      </table>
-    </div>
+<h1><span class="live"></span>JAGM IT Company — Live Operations</h1>
+<div class="subtitle" id="updated">Loading...</div>
+<div id="content"><div class="loading">Loading live data...</div></div>
+<div class="timestamp">Powered by Letta · Ollama qwen2.5:7b · Zero cost · Auto-refresh 30s</div>
+
+<script>
+async function loadData(){
+  try{
+    const t = Date.now();
+    const res = await fetch(`live-status.json?t=${t}`,{cache:'no-store'});
+    const data = await res.json();
     
-    <div class="card">
-      <h2>Projects — 5 repos</h2>
-      <table>
-        <tr><th>Repo</th><th>Issues</th><th>Last Commit</th></tr>
-        
-        <tr>
-          <td><a href="https://github.com/jagmstar/ai-sdlc" style="color:#60a5fa">ai-sdlc</a></td>
-          <td style="color:#ef4444">1 open</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-        </tr>
-        <tr>
-          <td><a href="https://github.com/jagmstar/drone-ibvs" style="color:#60a5fa">drone-ibvs</a></td>
-          <td style="color:#22c55e">0 open</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-        </tr>
-        <tr>
-          <td><a href="https://github.com/jagmstar/JagmITCompany" style="color:#60a5fa">JagmITCompany</a></td>
-          <td style="color:#22c55e">0 open</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-        </tr>
-        <tr>
-          <td><a href="https://github.com/jagmstar/family-expenses" style="color:#60a5fa">family-expenses</a></td>
-          <td style="color:#ef4444">1 open</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-        </tr>
-        <tr>
-          <td><a href="https://github.com/jagmstar/RomanControllingEverything" style="color:#60a5fa">RomanControllingEverything</a></td>
-          <td style="color:#ef4444">1 open</td>
-          <td style="color:#9ca3af;font-size:12px">—</td>
-        </tr>
-      </table>
-    </div>
+    document.getElementById('updated').textContent = 
+      `Last updated: ${data.generated_at || 'unknown'} · ${data.agents?.length || 0} agents · ${data.repos?.length || 0} repos · ${data.commits?.length || 0} recent commits`;
+
+    let html = '<div class="grid">';
     
-    <div class="card full">
-      <h2>Recent Activity — last commits across all repos</h2>
-      <div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">ai-sdlc</span> <span style="color:#9ca3af">a3802ff | fix(#235): harden structural tests for role profiles and integration checks.</span></div><div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">ai-sdlc</span> <span style="color:#9ca3af">рџ‘ѕ  | 2026-07-22T07:16:00Z</span></div><div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">ai-sdlc</span> <span style="color:#9ca3af">4c0f4e3 | fix(#241): framework flow guards вЂ” PM scope, closure evidence, test quality, rol | 2026-07-22T07:12:13Z</span></div><div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">ai-sdlc</span> <span style="color:#9ca3af">634cde8 | fix(#240): rewrite 20 templated role profiles with role-specific content | 2026-07-22T07:10:11Z</span></div><div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">drone-ibvs</span> <span style="color:#9ca3af">e1e1ef1 | Harden relocalization and runtime validation.</span></div><div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">drone-ibvs</span> <span style="color:#9ca3af">рџ‘ѕ Generated with [Letta Code](htt | 2026-07-22T07:11:01Z</span></div><div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">drone-ibvs</span> <span style="color:#9ca3af">150cab9 | docs: document telemetry review and launcher workflow</span></div><div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">drone-ibvs</span> <span style="color:#9ca3af">Explain the flight artifa | 2026-07-21T17:29:00Z</span></div><div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">drone-ibvs</span> <span style="color:#9ca3af">b2cebdb | ci: add unit, smoke, and flight-gate validation</span></div><div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">drone-ibvs</span> <span style="color:#9ca3af">Refs #17, #18, and #20.</span></div><div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">drone-ibvs</span> <span style="color:#9ca3af">рџ‘ѕ Gene | 2026-07-21T15:42:50Z</span></div><div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">JagmITCompany</span> <span style="color:#9ca3af">633b34e | docs: add AI-SDLC team charters.</span></div><div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">JagmITCompany</span> <span style="color:#9ca3af">рџ‘ѕ Generated with [Letta Code](https://letta.co | 2026-07-22T07:11:26Z</span></div><div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">JagmITCompany</span> <span style="color:#9ca3af">5a46acc | feat(bizdev): package launch-ready offers and lead scanner</span></div><div style="padding:4px 0;border-bottom:1px solid #1f2937"><span style="color:#60a5fa">JagmITCompany</span> <span style="color:#9ca3af">Add productized serv | 2026-07-21T23:13:31Z</span></div>
-    </div>
-  </div>
-  
-  <div class="timestamp">Powered by Letta · qwen2.5:7b via Ollama · Zero cost</div>
+    // Agents
+    html += '<div class="card"><h2>👥 Digital Twins</h2><table>';
+    html += '<tr><th>Agent</th><th>Status</th><th>Last Response</th><th>Time</th></tr>';
+    (data.agents||[]).forEach(a=>{
+      const color = a.status==='responded'?'green':'gray';
+      const icon = a.status==='responded'?'✅':'⏳';
+      const msg = (a.last_message||'—').replace(/</g,'&lt;').substring(0,120);
+      const time = (a.last_response||'').substring(0,19);
+      html += `<tr><td style="font-weight:600">${a.name}</td><td class="${color}">${icon}</td><td class="agent-msg">${msg}</td><td class="gray" style="font-size:10px">${time}</td></tr>`;
+    });
+    html += '</table></div>';
+
+    // Repos
+    html += '<div class="card"><h2>📁 Projects</h2><table>';
+    html += '<tr><th>Repo</th><th>Issues</th><th>Last Commit</th></tr>';
+    (data.repos||[]).forEach(r=>{
+      const ic = r.open_issues>0?'red':'green';
+      const commit = (r.last_commit||'—').replace(/</g,'&lt;').substring(0,80);
+      html += `<tr><td><a href="${r.url}" class="blue">${r.name}</a></td><td class="${ic}">${r.open_issues} open</td><td class="gray" style="font-size:11px">${commit}</td></tr>`;
+    });
+    html += '</table></div>';
+
+    // Commits
+    html += '<div class="card full"><h2>🔄 Recent Activity</h2>';
+    (data.commits||[]).forEach(c=>{
+      const text = (c.commit||'').replace(/</g,'&lt;');
+      html += `<div class="commit"><span class="repo">${c.repo}</span><span class="msg">${text}</span></div>`;
+    });
+    if(!(data.commits||[]).length) html += '<div class="gray">No recent activity</div>';
+    html += '</div>';
+
+    html += '</div>';
+    document.getElementById('content').innerHTML = html;
+  }catch(e){
+    document.getElementById('content').innerHTML = `<div class="loading red">Error loading: ${e.message}</div>`;
+  }
+}
+loadData();
+setInterval(loadData, 30000);
+</script>
 </body>
 </html>
