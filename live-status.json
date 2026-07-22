@@ -1,0 +1,165 @@
+{
+  "generated_at": "2026-07-22T11:20:58.862767",
+  "agents": [
+    {
+      "name": "CEO-JAGM",
+      "status": "idle",
+      "last_message": "",
+      "last_response": ""
+    },
+    {
+      "name": "CTO-JAGM",
+      "status": "idle",
+      "last_message": "",
+      "last_response": ""
+    },
+    {
+      "name": "CFO-JAGM",
+      "status": "idle",
+      "last_message": "",
+      "last_response": ""
+    },
+    {
+      "name": "CMO-JAGM",
+      "status": "idle",
+      "last_message": "",
+      "last_response": ""
+    },
+    {
+      "name": "CISO-JAGM",
+      "status": "idle",
+      "last_message": "",
+      "last_response": ""
+    },
+    {
+      "name": "PMO-Lead",
+      "status": "idle",
+      "last_message": "",
+      "last_response": ""
+    },
+    {
+      "name": "QAO-Lead",
+      "status": "idle",
+      "last_message": "",
+      "last_response": ""
+    },
+    {
+      "name": "SEDO-Lead",
+      "status": "idle",
+      "last_message": "",
+      "last_response": ""
+    },
+    {
+      "name": "Audit-Agent",
+      "status": "idle",
+      "last_message": "",
+      "last_response": ""
+    },
+    {
+      "name": "Dashboard-Agent",
+      "status": "idle",
+      "last_message": "",
+      "last_response": ""
+    },
+    {
+      "name": "Memory-Warden",
+      "status": "idle",
+      "last_message": "",
+      "last_response": ""
+    }
+  ],
+  "repos": [
+    {
+      "name": "ai-sdlc",
+      "url": "https://github.com/jagmstar/ai-sdlc",
+      "open_issues": 1,
+      "last_commit": ""
+    },
+    {
+      "name": "drone-ibvs",
+      "url": "https://github.com/jagmstar/drone-ibvs",
+      "open_issues": 0,
+      "last_commit": ""
+    },
+    {
+      "name": "JagmITCompany",
+      "url": "https://github.com/jagmstar/JagmITCompany",
+      "open_issues": 0,
+      "last_commit": ""
+    },
+    {
+      "name": "family-expenses",
+      "url": "https://github.com/jagmstar/family-expenses",
+      "open_issues": 1,
+      "last_commit": ""
+    },
+    {
+      "name": "RomanControllingEverything",
+      "url": "https://github.com/jagmstar/RomanControllingEverything",
+      "open_issues": 1,
+      "last_commit": ""
+    }
+  ],
+  "commits": [
+    {
+      "repo": "ai-sdlc",
+      "commit": "a3802ff | fix(#235): harden structural tests for role profiles and integration checks."
+    },
+    {
+      "repo": "ai-sdlc",
+      "commit": "рџ‘ѕ  | 2026-07-22T07:16:00Z"
+    },
+    {
+      "repo": "ai-sdlc",
+      "commit": "4c0f4e3 | fix(#241): framework flow guards вЂ” PM scope, closure evidence, test quality, rol | 2026-07-22T07:12:13Z"
+    },
+    {
+      "repo": "ai-sdlc",
+      "commit": "634cde8 | fix(#240): rewrite 20 templated role profiles with role-specific content | 2026-07-22T07:10:11Z"
+    },
+    {
+      "repo": "drone-ibvs",
+      "commit": "e1e1ef1 | Harden relocalization and runtime validation."
+    },
+    {
+      "repo": "drone-ibvs",
+      "commit": "рџ‘ѕ Generated with [Letta Code](htt | 2026-07-22T07:11:01Z"
+    },
+    {
+      "repo": "drone-ibvs",
+      "commit": "150cab9 | docs: document telemetry review and launcher workflow"
+    },
+    {
+      "repo": "drone-ibvs",
+      "commit": "Explain the flight artifa | 2026-07-21T17:29:00Z"
+    },
+    {
+      "repo": "drone-ibvs",
+      "commit": "b2cebdb | ci: add unit, smoke, and flight-gate validation"
+    },
+    {
+      "repo": "drone-ibvs",
+      "commit": "Refs #17, #18, and #20."
+    },
+    {
+      "repo": "drone-ibvs",
+      "commit": "рџ‘ѕ Gene | 2026-07-21T15:42:50Z"
+    },
+    {
+      "repo": "JagmITCompany",
+      "commit": "633b34e | docs: add AI-SDLC team charters."
+    },
+    {
+      "repo": "JagmITCompany",
+      "commit": "рџ‘ѕ Generated with [Letta Code](https://letta.co | 2026-07-22T07:11:26Z"
+    },
+    {
+      "repo": "JagmITCompany",
+      "commit": "5a46acc | feat(bizdev): package launch-ready offers and lead scanner"
+    },
+    {
+      "repo": "JagmITCompany",
+      "commit": "Add productized serv | 2026-07-21T23:13:31Z"
+    }
+  ]
+}
