@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-22T16:14:50Z",
+  "generatedAt": "2026-07-22T16:25:01Z",
   "summary": {
     "repos": 8,
-    "openIssues": 136,
-    "totalIssues": 591,
+    "openIssues": 132,
+    "totalIssues": 600,
     "liveAgents": 13,
     "roleProfiles": 133,
     "departments": 10,
@@ -42,14 +42,14 @@
     {
       "name": "RomanControllingEverything",
       "url": "https://github.com/jagmstar/RomanControllingEverything",
-      "openIssues": 133,
-      "totalIssues": 174
+      "openIssues": 122,
+      "totalIssues": 176
     },
     {
       "name": "dm-twin",
       "url": "https://github.com/jagmstar/dm-twin",
-      "openIssues": 0,
-      "totalIssues": 14
+      "openIssues": 7,
+      "totalIssues": 21
     },
     {
       "name": "dm-twin-web",
@@ -65,19 +65,19 @@
     }
   ],
   "agents": [
-    "PMO-Lead",
-    "Dashboard-Agent",
-    "QAO-Lead",
-    "CTO-JAGM",
-    "CMO-JAGM",
-    "Superman-sleeptime",
     "CFO-JAGM",
-    "CEO-JAGM",
     "Memory-Warden",
-    "SEDO-Lead",
     "Superman",
     "Audit-Agent",
-    "CISO-JAGM"
+    "Dashboard-Agent",
+    "Superman-sleeptime",
+    "CEO-JAGM",
+    "PMO-Lead",
+    "CMO-JAGM",
+    "SEDO-Lead",
+    "CTO-JAGM",
+    "CISO-JAGM",
+    "QAO-Lead"
   ],
   "departments": [
     {
