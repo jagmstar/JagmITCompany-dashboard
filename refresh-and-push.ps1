@@ -1,4 +1,4 @@
-#!/usr/bin/env pwsh
+#!/usr/bin/env powershell
 # Dashboard auto-refresh: runs fetch-data.py, commits and pushes data.json
 $ErrorActionPreference = "SilentlyContinue"
 $DASH_DIR = "F:\dt-home\JagmITCompany-dashboard"
@@ -12,7 +12,7 @@ git diff --cached --quiet
 if ($LASTEXITCODE -ne 0) { $hasChanges = $true }
 
 if ($hasChanges) {
-    git commit -m "auto: refresh dashboard data — $(Get-Date -Format 'HH:mm dd.MM')" 2>$null
+    git commit -m "auto: refresh dashboard data - $(Get-Date -Format 'HH:mm dd.MM')" 2>$null
     git push origin master 2>$null
     Write-Output "Dashboard refreshed and pushed at $(Get-Date -Format 'HH:mm')"
 } else {
