@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-23T00:00:33Z",
+  "generatedAt": "2026-07-23T00:04:46Z",
   "summary": {
     "repos": 8,
-    "openIssues": 64,
+    "openIssues": 67,
     "totalIssues": 635,
     "liveAgents": 13,
     "roleProfiles": 124,
@@ -42,7 +42,7 @@
     {
       "name": "RomanControllingEverything",
       "url": "https://github.com/jagmstar/RomanControllingEverything",
-      "openIssues": 61,
+      "openIssues": 64,
       "totalIssues": 211
     },
     {
