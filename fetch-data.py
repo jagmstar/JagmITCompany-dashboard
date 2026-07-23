@@ -3,17 +3,19 @@
 from __future__ import annotations
 
 import json
+import os
+import re
 import subprocess
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
-from urllib.error import URLError
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 REPO_ROOT = Path(__file__).resolve().parent
-ROLE_PROFILE_DIR = Path(r"F:\AI SDLC rork\ai-sdlc-1.0-143\.claude\agents")
-AGENT_URL = "http://127.0.0.1:8283/v1/agents/"
+DEFAULT_ROLE_REGISTRY_PATH = Path(r"F:\dt-home\meta\company\role-registry.md")
+DEFAULT_AGENT_URL = "http://127.0.0.1:8283/v1/agents/"
 ORG = "jagmstar"
 
 # Company-relevant repos (not personal/legacy repos)
@@ -87,15 +89,39 @@ def count_total_issues(repo: str) -> int:
     return len(issues) if isinstance(issues, list) else 0
 
 
-def count_role_profiles() -> int:
-    if not ROLE_PROFILE_DIR.exists():
-        return 0
-    return sum(1 for p in ROLE_PROFILE_DIR.rglob("*.md") if p.is_file())
+ROLE_TOTAL_RE = re.compile(r"^\| \*\*Total real roles\*\* \| \*\*(\d+)\*\* \|$")
+PROFILE_TOTAL_RE = re.compile(r"^\| Profile files found \| (\d+) \|$")
+
+
+def read_role_registry(path: Path) -> dict[str, int]:
+    if not path.exists():
+        raise FileNotFoundError(f"Role registry not found: {path}")
+
+    total_real_roles: int | None = None
+    profile_files_found: int | None = None
+
+    for line in path.read_text(encoding="utf-8").splitlines():
+        total_match = ROLE_TOTAL_RE.match(line.strip())
+        if total_match:
+            total_real_roles = int(total_match.group(1))
+        profile_match = PROFILE_TOTAL_RE.match(line.strip())
+        if profile_match:
+            profile_files_found = int(profile_match.group(1))
+
+    if total_real_roles is None:
+        raise RuntimeError(f"Could not parse total real roles from {path}")
+    if profile_files_found is None:
+        raise RuntimeError(f"Could not parse profile files found from {path}")
+
+    return {
+        "total_real_roles": total_real_roles,
+        "profile_files_found": profile_files_found,
+    }
 
 
 def fetch_agents() -> list[dict]:
     try:
-        req = Request(AGENT_URL, headers={"Accept": "application/json"})
+        req = Request(DEFAULT_AGENT_URL, headers={"Accept": "application/json"})
         with urlopen(req, timeout=10) as resp:
             data = json.loads(resp.read().decode("utf-8"))
         if isinstance(data, list):
@@ -127,12 +153,22 @@ def build_data() -> dict[str, Any]:
             "totalIssues": total_count,
         })
 
+    role_registry_path = Path(os.environ.get("JAGM_ROLE_REGISTRY_PATH", str(DEFAULT_ROLE_REGISTRY_PATH)))
+    role_registry = read_role_registry(role_registry_path)
+
+    if role_registry["profile_files_found"] != role_registry["total_real_roles"]:
+        raise RuntimeError(
+            "Role registry self-check failed: "
+            f"total_real_roles={role_registry['total_real_roles']} profile_files_found={role_registry['profile_files_found']} "
+            f"registry_path={role_registry_path}"
+        )
+
     agents = fetch_agents()
     agent_names = [a.get("name", "unknown") for a in agents]
     # Deduplicate by name
-    unique_agents = list(set(agent_names))
+    unique_agents = list(dict.fromkeys(agent_names))
 
-    role_count = count_role_profiles()
+    role_count = role_registry["total_real_roles"]
 
     now = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
@@ -164,6 +200,7 @@ def main() -> int:
     data = build_data()
     out_path = REPO_ROOT / "data.json"
     out_path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    (REPO_ROOT / "live-status.json").write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(json.dumps(data["summary"], indent=2))
     return 0
 

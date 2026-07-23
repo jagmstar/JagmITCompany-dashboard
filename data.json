@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-22T17:49:58Z",
+  "generatedAt": "2026-07-23T00:00:33Z",
   "summary": {
     "repos": 8,
-    "openIssues": 100,
-    "totalIssues": 601,
+    "openIssues": 64,
+    "totalIssues": 635,
     "liveAgents": 13,
-    "roleProfiles": 133,
+    "roleProfiles": 124,
     "departments": 10,
     "revenue": 0,
     "revenueLabel": "$0",
@@ -42,8 +42,8 @@
     {
       "name": "RomanControllingEverything",
       "url": "https://github.com/jagmstar/RomanControllingEverything",
-      "openIssues": 97,
-      "totalIssues": 177
+      "openIssues": 61,
+      "totalIssues": 211
     },
     {
       "name": "dm-twin",
@@ -65,19 +65,19 @@
     }
   ],
   "agents": [
-    "CFO-JAGM",
-    "CEO-JAGM",
     "CTO-JAGM",
-    "Superman-sleeptime",
-    "Superman",
-    "Dashboard-Agent",
-    "CMO-JAGM",
+    "QAO-Lead",
+    "SEDO-Lead",
     "Audit-Agent",
+    "CISO-JAGM",
+    "CMO-JAGM",
+    "Dashboard-Agent",
     "Memory-Warden",
     "PMO-Lead",
-    "CISO-JAGM",
-    "QAO-Lead",
-    "SEDO-Lead"
+    "CFO-JAGM",
+    "CEO-JAGM",
+    "Superman-sleeptime",
+    "Superman"
   ],
   "departments": [
     {
