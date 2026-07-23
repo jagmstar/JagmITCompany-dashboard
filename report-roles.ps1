@@ -9,9 +9,14 @@ $TIMESTAMP = Get-Date -Format "HH:mm dd.MM.yyyy"
 
 function Get-ReportIssue($rolePrefix) {
     $title = "[$rolePrefix] Status Report - $(Get-Date -Format 'dd.MM.yyyy')"
+    # Check open issues first
     $existing = gh issue list --repo $REPO --state open --limit 50 --json number,title 2>$null | ConvertFrom-Json
     $found = $existing | Where-Object { $_.title -eq $title } | Select-Object -First 1
     if ($found) { return $found.number }
+    # Check closed issues too — don't create duplicates if already closed today
+    $closed = gh issue list --repo $REPO --state closed --limit 50 --json number,title 2>$null | ConvertFrom-Json
+    $foundClosed = $closed | Where-Object { $_.title -eq $title } | Select-Object -First 1
+    if ($foundClosed) { return $foundClosed.number }
     $num = gh issue create --repo $REPO --title $title --body "_Automated reporting thread for $rolePrefix - $(Get-Date -Format 'yyyy-MM-dd')_" 2>$null
     if ($num -match '/issues/(\d+)') { return $matches[1] }
     return $null
