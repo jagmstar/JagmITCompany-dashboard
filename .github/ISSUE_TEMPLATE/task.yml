@@ -1,0 +1,34 @@
+name: Task
+description: Track a specific piece of work.
+title: "[Task]: "
+labels:
+  - task
+body:
+  - type: textarea
+    id: task_description
+    attributes:
+      label: Task description
+      description: Describe the task to be completed.
+    validations:
+      required: true
+  - type: dropdown
+    id: assigned_role
+    attributes:
+      label: Assigned role
+      description: Select the role responsible for this task.
+      options:
+        - CEO
+        - CTO
+        - CFO
+        - CMO
+        - CISO
+        - PMO
+        - QAO
+        - DevOps
+        - SEDO
+        - Research
+        - Design
+        - Sales
+        - TechWriter
+        - AI-Engineer
+        - Legal

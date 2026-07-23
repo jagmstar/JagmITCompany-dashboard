@@ -1,0 +1,29 @@
+name: Feature request
+description: Suggest a new feature or enhancement.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: feature_description
+    attributes:
+      label: Feature description
+      description: Describe the feature or enhancement you want.
+    validations:
+      required: true
+  - type: textarea
+    id: business_value
+    attributes:
+      label: Business value
+      description: Explain the business impact or value.
+  - type: dropdown
+    id: estimated_size
+    attributes:
+      label: Estimated size
+      description: Estimate the implementation size.
+      options:
+        - XS
+        - S
+        - M
+        - L
+        - XL
