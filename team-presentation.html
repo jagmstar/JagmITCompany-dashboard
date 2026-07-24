@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JAGM IT Company — Team Presentation</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0f;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.slide {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 80px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: var(--accent);
+}
+
+.slide-num {
+    position: absolute;
+    top: 30px; right: 40px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.3);
+    font-weight: 600;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    background: var(--accent);
+    color: #fff;
+}
+
+.slide h2 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--accent), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.slide h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--accent);
+}
+
+.slide-content {
+    max-width: 800px;
+    text-align: left;
+}
+
+.slide-content ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.slide-content li {
+    padding: 12px 0 12px 30px;
+    position: relative;
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.9);
+}
+
+.slide-content li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.slide-content p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 15px 0;
+    color: rgba(255,255,255,0.8);
+}
+
+.slide-content .closing {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Title slide */
+.title-slide {
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+}
+
+.title-slide h1 {
+    font-size: 64px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #e74c3c, #3498db, #2ecc71, #f39c12);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title-slide .subtitle {
+    font-size: 24px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 40px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+    max-width: 800px;
+}
+
+.team-member {
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.team-member .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* Stats slide */
+.stats-slide {
+    background: linear-gradient(135deg, #0a0a0f, #16213e);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat-number {
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--accent);
+}
+
+.stat-label {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 10px;
+}
+
+/* Contact slide */
+.contact-slide {
+    background: linear-gradient(135deg, #0a0a0f, #1a1a2e);
+    text-align: center;
+}
+
+.contact-slide h2 {
+    font-size: 56px;
+}
+
+.contact-info {
+    margin-top: 40px;
+    font-size: 24px;
+    color: rgba(255,255,255,0.6);
+}
+
+.contact-info a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+/* Navigation */
+.nav {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+}
+
+.nav-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-dot.active {
+    background: #e74c3c;
+    transform: scale(1.3);
+}
+
+/* Error slide */
+.error-slide {
+    opacity: 0.5;
+}
+
+.error-slide::after {
+    content: '⚠ Agent unavailable';
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.3);
+    font-size: 14px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="slide title-slide" style="--accent: #e74c3c;">
+    <h1>JAGM IT Company</h1>
+    <p class="subtitle">AI-SDLC Solutions for Modern Teams</p>
+    <p class="subtitle">Presentation by the Digital Twin Team</p>
+    <div class="team-grid">
+        <div class="team-member"><span class="dot" style="background:#e74c3c"></span>CEO-JAGM</div>
+        <div class="team-member"><span class="dot" style="background:#3498db"></span>CTO-JAGM</div>
+        <div class="team-member"><span class="dot" style="background:#2ecc71"></span>CFO-JAGM</div>
+        <div class="team-member"><span class="dot" style="background:#e67e22"></span>CISO-JAGM</div>
+        <div class="team-member"><span class="dot" style="background:#1abc9c"></span>PMO-Lead</div>
+        <div class="team-member"><span class="dot" style="background:#f39c12"></span>DevOps-Lead</div>
+        <div class="team-member"><span class="dot" style="background:#34495e"></span>BA-Agent</div>
+        <div class="team-member"><span class="dot" style="background:#9b59b6"></span>Sales-Strategist</div>
+    </div>
+</div>
+
+
+<div class="slide stats-slide" style="--accent: #3498db;">
+    <span class="slide-num">02</span>
+    <div class="role-badge" style="background: #3498db;">Team Stats</div>
+    <h2>By the Numbers</h2>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">22</div>
+            <div class="stat-label">Server Agents</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">20</div>
+            <div class="stat-label">Artifacts Created</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">14</div>
+            <div class="stat-label">Tests Passing</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Products</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">39</div>
+            <div class="stat-label">GitHub Repos</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">2644</div>
+            <div class="stat-label">Total Commits</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Agent Reuses</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">$0</div>
+            <div class="stat-label">Operating Cost</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="slide" style="--accent: #e74c3c;">
+    <span class="slide-num">03</span>
+    <div class="role-badge" style="background: #e74c3c;">CEO-JAGM</div>
+    <h2>Company Vision</h2>
+    <div class="slide-content">
+        <p>Sure, here is a single presentation slide for JAGM IT Company's vision:</p>
+<p>JAGM IT Company — AI-SDLC Solutions for Modern Teams</p>
+<li>Automate and streamline software development processes.</li>
+<li>Enhance collaboration with AI-driven tools.</li>
+<li>Drive innovation through data analytics.</li>
+<li>Empowering teams to deliver smarter, faster solutions.</li>
+    </div>
+</div>
+
+
+<div class="slide" style="--accent: #3498db;">
+    <span class="slide-num">04</span>
+    <div class="role-badge" style="background: #3498db;">CTO-JAGM</div>
+    <h2>Technical Capabilities</h2>
+    <div class="slide-content">
+        <h3>Our Tech Stack: AI Agents, Automated Audits, CI/CD, Security Scanning</h3>
+<li>AI Agents with Persistent Memory: Intelligent automation for enhanced productivity.</li>
+<li>Automated Audits and Analytics: Real-time monitoring and insights for comprehensive risk management.</li>
+<li>CI/CD Pipelines: Efficient deployment processes ensuring quality and reliability.</li>
+<li>Security Scanning: Proactive threat detection and mitigation.</li>
+<p>We leverage these capabilities to deliver robust, secure, and scalable solutions.</p>
+    </div>
+</div>
+
+
+<div class="slide" style="--accent: #2ecc71;">
+    <span class="slide-num">05</span>
+    <div class="role-badge" style="background: #2ecc71;">CFO-JAGM</div>
+    <h2>Financial Model</h2>
+    <div class="slide-content">
+        <h3>Revenue Model for 5 Products with Zero-Cost Delivery</h3>
+<li>Product pricing: Audit Scanner ($300), Security Scanner ($500), QA Framework ($400), CI/CD Templates ($200)</li>
+<li>Zero-cost delivery via AI workforce optimization and automation</li>
+<li>Target initial clients at discounted rates to build case studies</li>
+<p class="closing">Closing Statement: Streamlined operations and strategic pricing ensure sustainability and early adoption.</p>
+    </div>
+</div>
+
+
+<div class="slide error-slide" style="--accent: #9b59b6;">
+    <span class="slide-num">06</span>
+    <div class="role-badge" style="background: #9b59b6;">CMO-JAGM</div>
+    <h2>Market Strategy</h2>
+    <div class="slide-content">
+        <p>Agent not found</p>
+    </div>
+</div>
+
+
+<div class="slide" style="--accent: #e67e22;">
+    <span class="slide-num">07</span>
+    <div class="role-badge" style="background: #e67e22;">CISO-JAGM</div>
+    <h2>Security Approach</h2>
+    <div class="slide-content">
+        <h3>Security Audits & Vulnerability Scanning Approach</h3>
+<li>Conduct定期轮询已达到最大请求数，请稍后再试。</li>
+    </div>
+</div>
+
+
+<div class="slide" style="--accent: #1abc9c;">
+    <span class="slide-num">08</span>
+    <div class="role-badge" style="background: #1abc9c;">PMO-Lead</div>
+    <h2>Delivery Methodology</h2>
+    <div class="slide-content">
+        <h3>AI-SDLC Flow</h3>
+<li>Plan: Define scope, goals, and milestones.</li>
+<li>Develop: Implement code with continuous integration.</li>
+<li>Test: Conduct rigorous testing for quality assurance.</li>
+<li>Review: Get approvals before deployment.</li>
+<li>Deploy: Monitor and maintain system performance.</li>
+<p class="closing">Ensuring each phase is robust guarantees successful project delivery.</p>
+    </div>
+</div>
+
+
+<div class="slide" style="--accent: #f39c12;">
+    <span class="slide-num">09</span>
+    <div class="role-badge" style="background: #f39c12;">DevOps-Lead</div>
+    <h2>Infrastructure</h2>
+    <div class="slide-content">
+        <h3>Infrastructure Overview</h3>
+<li>CI/CD Pipelines for Automated Builds and Deployments</li>
+<li>Docker Containers for Consistent Environments</li>
+<li>GitHub Actions for Streamlined Workflow Management</li>
+<p class="closing">Ensuring seamless deployment and robust monitoring.</p>
+    </div>
+</div>
+
+
+<div class="slide" style="--accent: #34495e;">
+    <span class="slide-num">10</span>
+    <div class="role-badge" style="background: #34495e;">BA-Agent</div>
+    <h2>Product Features</h2>
+    <div class="slide-content">
+        <p>{</p>
+<p>"title": "Key Products",</p>
+<p class="closing">"key_points": ["Audit Scanner: Automated security audits", "Security Tool: Real-time threat protection", "QA Framework: Robust testing protocols", "CI/CD Templates: Streamlined DevOps processes"],</p>
+<p class="closing">"closing_statement": "Empowering efficient, secure product development."</p>
+<p>}</p>
+    </div>
+</div>
+
+
+<div class="slide contact-slide" style="--accent: #e74c3c;">
+    <span class="slide-num">11</span>
+    <h2>Let's Build Together</h2>
+    <div class="contact-info">
+        <p>JAGM IT Company</p>
+        <p>AI-SDLC Solutions for Modern Teams</p>
+        <p style="margin-top: 20px;">5 Products · Zero-Cost Delivery · AI Workforce</p>
+        <p style="margin-top: 30px; font-size: 18px;">Presented by 8 Digital Twin Agents</p>
+        <p style="margin-top: 10px; font-size: 14px; color: rgba(255,255,255,0.3);">Powered by Letta Server · qwen2.5:7b · Claude</p>
+    </div>
+</div>
+
+
+<div class="nav" id="nav"></div>
+<script>
+const slides = document.querySelectorAll('.slide');
+const nav = document.getElementById('nav');
+slides.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'nav-dot';
+    if (i === 0) dot.classList.add('active');
+    dot.onclick = () => slides[i].scrollIntoView({behavior: 'smooth'});
+    nav.appendChild(dot);
+});
+window.addEventListener('scroll', () => {
+    const scrollPos = window.scrollY + window.innerHeight / 2;
+    slides.forEach((slide, i) => {
+        if (scrollPos >= slide.offsetTop && scrollPos < slide.offsetTop + slide.offsetHeight) {
+            nav.querySelectorAll('.nav-dot').forEach(d => d.classList.remove('active'));
+            nav.children[i].classList.add('active');
+        }
+    });
+});
+</script>
+</body>
+</html>
